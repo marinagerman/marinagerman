@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отзывы — Марина Герман</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Марина Герман">
+  <meta property="og:title" content="Отзывы — Марина Герман">
+  <meta property="og:description" content="Отзывы учеников и клиентов Марины Герман.">
+  <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:url" content="https://marinagerman.github.io/marinagerman/otzyvy.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Отзывы — Марина Герман">
+  <meta name="twitter:description" content="Отзывы учеников и клиентов Марины Герман.">
+  <meta name="twitter:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
   <meta name="description" content="Отзывы после сессий, сканирований и обучения Тетахилинг у Марины Герман. Из канала t.me/german_tziv">
-  <link rel="icon" type="image/png" href="logo-mg.png">
-  <style>
+<style>
     :root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
     *{box-sizing:border-box;margin:0;padding:0}
     body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
@@ -319,6 +333,36 @@
     }
     /* /mobile-half-buttons */
 
+  
+    /* legal-footer-css */
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 2.5rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner { display: grid; gap: 1.75rem; }
+    .footer-seller p { margin-top: 0.35rem; line-height: 1.55; }
+    .footer-seller strong { color: var(--gold); }
+    .footer-seller a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 2px; }
+    .footer-links {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center;
+    }
+    .footer-links a {
+      color: var(--muted); font-size: 0.8rem; letter-spacing: 0.02em;
+    }
+    .footer-links a:hover { color: var(--gold-bright); }
+    .footer-copy {
+      text-align: center; font-size: 0.78rem; color: var(--muted); opacity: 0.85;
+      padding-top: 0.5rem; border-top: 1px solid rgba(197, 160, 112, 0.12);
+    }
+    @media (min-width: 640px) {
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-seller { justify-self: center; }
+    }
+
+    /* /legal-footer-css */
   </style>
 </head>
 <body>
@@ -418,9 +462,23 @@
   </main>
 
   <footer class="site-footer sans">
-    <p>ИП Герман Марина Олеговна · <a href="tel:+79897001701">+7 989 700 17 01</a></p>
-    <p style="margin-top:.5rem"><a href="index.html">АКЦИЯ 43%</a> · <a href="stati.html">Статьи</a> · <a href="kursy.html">Курсы</a> · <a href="marina-german.html">Обо мне</a></p>
-  </footer>
+  <div class="container footer-inner">
+    <div class="footer-seller">
+      <p><strong>ИП Герман Марина Олеговна</strong></p>
+      <p>Тел.: <a href="tel:+79897001701">+7 989 700 17 01</a></p>
+      <p>Email: <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a></p>
+    </div>
+    <nav class="footer-links" aria-label="Юридические документы">
+      <a href="oferta.html">Публичная оферта</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="consent-pd.html">Согласие на обработку ПДн</a>
+      <a href="consent-mailing.html">Согласие на рассылку</a>
+      <a href="requisites.html">Реквизиты</a>
+      <a href="refund.html">Возврат и отказ</a>
+    </nav>
+    <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Все права защищены.</p>
+  </div>
+</footer>
   <script>
     (function(){
       const track = document.getElementById('reviewsCarousel');
