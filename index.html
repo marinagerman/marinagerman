@@ -28,15 +28,15 @@
     .hero-photo {
       position: relative;
       overflow: hidden;
-      min-height: min(88vh, 860px);
+      min-height: min(90vh, 880px);
       border-bottom: 1px solid rgba(197, 160, 112, 0.2);
       background-color: #050505;
       background-image:
-        linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.05) 38%, rgba(5,5,5,0.45) 58%, rgba(5,5,5,0.88) 78%, #050505 100%),
+        linear-gradient(180deg, rgba(5,5,5,0.08) 0%, rgba(5,5,5,0.02) 28%, rgba(5,5,5,0.35) 52%, rgba(5,5,5,0.82) 72%, #050505 100%),
         url("marina-avatar.webp");
       background-repeat: no-repeat;
-      background-position: center top;
-      background-size: cover;
+      background-position: center 12%;
+      background-size: 100% auto;
       padding-top: 0;
     }
     .hero-photo::after { display: none; }
@@ -47,7 +47,7 @@
       min-height: inherit;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 18rem 0 2.2rem;
+      padding: 42vh 0 2.2rem;
       background: transparent;
     }
     .brand {
@@ -459,19 +459,19 @@
     .top-phone:hover { color: #fff; }
     @media (max-width: 900px) {
       .hero-photo {
-        min-height: auto;
-        background-size: auto min(38vh, 320px);
-        background-position: center top;
-        padding-top: min(38vh, 320px);
+        min-height: min(78vh, 640px);
+        background-size: 100% auto;
+        background-position: center 10%;
+        padding-top: 0;
         background-image:
-          linear-gradient(180deg, transparent 0%, transparent 60%, rgba(5,5,5,0.5) 82%, #050505 100%),
+          linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.05) 32%, rgba(5,5,5,0.4) 55%, rgba(5,5,5,0.9) 78%, #050505 100%),
           url("marina-avatar.webp");
       }
       .hero-inner {
-        min-height: auto;
-        padding: 0.7rem 0 1.5rem;
-        justify-content: flex-start;
-        background: #050505;
+        min-height: inherit;
+        padding: 38vh 0 1.4rem;
+        justify-content: flex-end;
+        background: transparent;
       }
       .hero h1 { font-size: clamp(1.3rem, 5.2vw, 1.75rem); }
       .hero-sub { font-size: 0.86rem; }
@@ -481,10 +481,11 @@
     @media (max-width: 600px) {
       .count-note { margin-left: 0; width: 100%; }
       .hero-photo {
-        background-size: auto min(32vh, 260px);
-        padding-top: min(32vh, 260px);
+        min-height: min(72vh, 560px);
+        background-size: 100% auto;
+        background-position: center 8%;
       }
-      .hero-inner { padding: 0.55rem 0 1.25rem; }
+      .hero-inner { padding: 34vh 0 1.2rem; }
       .hero .brand { margin-bottom: 0; }
       .hero h1 { margin-top: 0.35rem; }
       .hero-sub { margin-top: 0.5rem; font-size: 0.82rem; }
