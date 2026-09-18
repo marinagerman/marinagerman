@@ -139,6 +139,10 @@
       padding:.55rem 0;min-height:auto;flex-wrap:nowrap;
     }
     .logo-img{width:64px!important;height:64px!important;object-fit:contain;filter:drop-shadow(0 4px 14px rgba(197,160,112,.4))}
+    .logo-mobile-tag{
+      display:none;font-size:.68rem;font-weight:700;letter-spacing:.04em;
+      color:var(--gold-bright);line-height:1.2;max-width:7.2rem;
+    }
     .nav-pages{
       display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
       gap:.35rem;flex:1 1 auto;min-width:0;max-width:34rem;
@@ -187,32 +191,31 @@
     @media (max-width:900px){
       .topbar-inner{
         flex-wrap:wrap!important;align-items:center!important;
-        gap:.4rem .35rem!important;padding:.45rem 0 .55rem!important;
+        gap:.35rem .3rem!important;padding:.4rem 0 .5rem!important;
       }
       .logo-link{order:1;flex-shrink:0}
       .logo-img{width:40px!important;height:40px!important}
       .logo-word{display:none!important}
+      .logo-mobile-tag{
+        display:block!important;order:2;flex:0 1 auto;
+        font-size:.62rem!important;max-width:6.5rem;
+      }
       .nav-pages{
-        order:2;flex:1 1 auto!important;max-width:none!important;width:auto!important;
+        order:3;flex:1 1 auto!important;max-width:none!important;width:auto!important;
         display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
         justify-content:flex-start!important;align-items:center!important;
-        gap:.3rem!important;overflow-x:auto!important;overflow-y:hidden!important;
+        gap:.28rem!important;overflow-x:auto!important;overflow-y:hidden!important;
         -webkit-overflow-scrolling:touch;scrollbar-width:none;
         border:0!important;padding:0!important;margin:0!important;
       }
       .nav-pages::-webkit-scrollbar{display:none}
       .nav-pages a{
         flex:0 0 auto!important;width:auto!important;max-width:none!important;
-        font-size:.56rem!important;padding:.36rem .55rem!important;
+        font-size:.54rem!important;padding:.34rem .48rem!important;
       }
       .top-actions{
-        order:3;flex:0 0 auto!important;width:auto!important;
-        display:flex!important;flex-direction:row!important;gap:.3rem!important;
-        overflow:visible!important;max-height:none!important;
-      }
-      .write-btn,.topbar-inner>.top-btn.accent{
-        font-size:.56rem!important;padding:.36rem .5rem!important;
-        transform:none!important;
+        order:5;flex:0 0 auto!important;width:auto!important;
+        margin-left:auto;
       }
       .top-phone{font-size:.58rem!important;padding:.15rem .1rem!important}
       .soc-row{
@@ -220,22 +223,28 @@
         flex:1 1 100%!important;
         width:100%!important;
         display:flex!important;
-        justify-content:space-evenly!important;
+        justify-content:center!important;
         align-items:center!important;
-        gap:.45rem!important;
-        padding:.35rem 0 .1rem!important;
+        gap:.4rem!important;
+        padding:.3rem 0 .05rem!important;
         margin:0!important;
         border-top:1px solid rgba(197,160,112,.2);
       }
       .soc-btn{
         display:inline-flex!important;
-        width:42px!important;height:42px!important;
+        width:40px!important;height:40px!important;
         transform:none!important;
       }
-      .soc-btn svg{width:20px!important;height:20px!important}
+      .soc-btn svg{width:18px!important;height:18px!important}
+      .soc-row .write-btn{
+        display:inline-flex!important;
+        font-size:.56rem!important;padding:.42rem .7rem!important;
+        transform:none!important;margin-left:.15rem;
+      }
     }
     @media (max-width:420px){
       .top-phone{display:none}
+      .logo-mobile-tag{font-size:.58rem!important;max-width:5.6rem}
     }
     /* /header-layout-v2 */
 
@@ -248,8 +257,9 @@
         <img class="logo-img" src="logo-mg.png" width="82" height="82" alt="МГ">
         <span class="logo-word"><strong>Марина Герман</strong><span>Тебе можно легче</span></span>
       </a>
+      <span class="logo-mobile-tag sans">Тебе можно легче</span>
       <nav class="nav-pages sans" aria-label="Разделы сайта">
-        <a href="index.html">АКЦИЯ в мои 43</a>
+        <a href="index.html">АКЦИЯ 43%</a>
         <a href="kursy.html">Курсы</a>
         <a href="marina-german.html">Обо мне</a>
         <a href="otzyvy.html">Отзывы</a>
@@ -260,9 +270,9 @@
         <a class="soc-btn" href="https://www.youtube.com/channel/UCzEmJvBy86ILRyJDOLuOiFA" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7L16.2 12l-6.45 3.5z"/></svg></a>
         <a class="soc-btn" href="https://www.instagram.com/marina_germaan/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9zm9.7 1.5a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3zM12 7.2A4.8 4.8 0 1 1 12 16.8 4.8 4.8 0 0 1 12 7.2zm0 1.8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
         <a class="soc-btn" href="https://t.me/marina_german_potok_fm" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.8 4.2 3.4 11.3c-1.25.48-1.23 1.15-.22 1.45l4.72 1.47 1.83 5.6c.24.74.12 1.03.82 1.03.54 0 .78-.25 1.08-.54l2.6-2.53 5.4 3.98c.99.55 1.7.26 1.95-.92L23.9 5.55c.28-1.12-.43-1.62-1.4-1.2l-.7.35z"/></svg></a>
+        <a class="top-btn accent write-btn" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
       </nav>
       <nav class="top-actions" aria-label="Контакты">
-        <a class="top-btn accent write-btn" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
         <a class="top-phone" href="tel:+79897001701">+7 989 700 17 01</a>
       </nav>
     </div>
@@ -301,7 +311,7 @@
       <p><strong style="color:var(--gold)">ИП Герман Марина Олеговна</strong></p>
       <p style="margin-top:.35rem">Тел.: <a href="tel:+79897001701">+7 989 700 17 01</a> · <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a></p>
       <div class="footer-links">
-        <a href="index.html">АКЦИЯ в мои 43</a>
+        <a href="index.html">АКЦИЯ 43%</a>
         <a href="kursy.html">Курсы</a>
         <a href="oferta.html">Оферта</a>
         <a href="privacy.html">Конфиденциальность</a>
