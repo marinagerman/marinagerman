@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статьи — Марина Герман</title>
+  <meta name="description" content="Статьи Марины Герман: СДВГ, отношения, обучение Тетахилинг.">
+  <link rel="icon" type="image/png" href="logo-mg.png">
+  <style>
+    :root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+    .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(960px,calc(100% - 2rem));margin:0 auto}
+    .site-topbar{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(197,160,112,.22)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0;min-height:4.25rem}
+    .logo-link{display:inline-flex;align-items:center;gap:.75rem;flex-shrink:0}
+    .logo-img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(197,160,112,.45))}
+    .logo-word{display:flex;flex-direction:column;line-height:1.15}
+    .logo-word strong{font-size:1rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright)}
+    .logo-word span{font-size:.68rem;letter-spacing:.08em;color:var(--muted)}
+    .nav-pages{display:flex;flex-wrap:nowrap;align-items:center;gap:.35rem;flex:1 1 auto;justify-content:center;overflow-x:auto;scrollbar-width:none}
+    .nav-pages::-webkit-scrollbar{display:none}
+    .nav-pages a{flex:0 0 auto;white-space:nowrap;border:1px solid rgba(197,160,112,.35);background:linear-gradient(180deg,rgba(28,24,20,.95),rgba(12,10,8,.95));color:var(--gold-bright);border-radius:999px;padding:.42rem .78rem;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .nav-pages a.active,.nav-pages a:hover{border-color:var(--gold);color:#fff}
+    .top-btn{border:1px solid rgba(197,160,112,.35);border-radius:999px;padding:.4rem .8rem;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-bright)}
+    .top-btn.accent{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111;border-color:transparent}
+    .hero{padding:2.5rem 0 1.5rem;border-bottom:1px solid rgba(197,160,112,.2)}
+    .brand{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+    h1{margin-top:.75rem;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:.1em;text-transform:uppercase}
+    .lead{margin-top:1rem;max-width:42rem;color:var(--muted)}
+    .cta-row{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .btn-primary{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+    .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+    .filters{display:flex;flex-wrap:wrap;gap:.5rem;padding:1.5rem 0 1rem}
+    .chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:.45rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+    .chip.active,.chip:hover{border-color:var(--gold);color:var(--gold-bright)}
+    .articles{display:grid;gap:1.25rem;padding-bottom:3rem}
+    .article{background:linear-gradient(160deg,#161310,#0a0908);border:1px solid rgba(197,160,112,.28);border-radius:16px;padding:1.4rem 1.3rem}
+    .article h2{font-size:1.25rem;color:#fff}
+    .tag{display:inline-block;margin-bottom:.75rem;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+    .article p{color:var(--muted);margin-top:.7rem;font-size:.95rem}
+    .article .quote{border-left:2px solid rgba(197,160,112,.45);padding-left:.9rem;color:#e8e0d6;font-style:italic}
+    .article-links{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+    .article-links a{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-bright);border-bottom:1px solid rgba(197,160,112,.35)}
+    .train-banner{margin:0 0 2.5rem;padding:1.5rem 1.35rem;border:1px solid rgba(197,160,112,.45);border-radius:16px;background:linear-gradient(135deg,rgba(197,160,112,.12),rgba(5,5,5,.9))}
+    .train-banner h2{font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-bright)}
+    .train-banner p{margin-top:.7rem;color:var(--muted)}
+    .site-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.85rem}
+    @media(max-width:900px){.logo-word{display:none}}
+  </style>
+</head>
+<body>
+  <div class="site-topbar">
+    <div class="container topbar-inner sans">
+      <a class="logo-link" href="index.html"><img class="logo-img" src="logo-mg.png" alt="МГ"><span class="logo-word"><strong>Марина Герман</strong><span>Тебе можно легче</span></span></a>
+      <nav class="nav-pages sans" aria-label="Разделы сайта">
+        <a href="index.html">АКЦИЯ в мои 43</a>
+        <a href="kursy.html">Курсы</a>
+        <a href="marina-german.html">Обо мне</a>
+        <a href="otzyvy.html">Отзывы</a>
+        <a class="active" href="stati.html">Статьи</a>
+      </nav>
+      <a class="top-btn accent" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
+    </div>
+  </div>
+  <header class="hero"><div class="container">
+    <p class="brand sans">Telegram · YouTube</p>
+    <h1 class="sans">Статьи</h1>
+    <p class="lead sans">Выдержки из канала «Тебе можно легче» — про СДВГ, отношения и обучение Тетахилинг.</p>
+    <div class="cta-row sans">
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvnu4ZwKPDZ0CNm-iMFhHSNYtqA1Dc70uJdz0Eew2VH879sQ/viewform?usp=sharing" target="_blank" rel="noopener">Записаться на обучение Тетахилинг</a>
+      <a class="btn btn-ghost" href="https://t.me/marina_german_potok_fm" target="_blank" rel="noopener">Канал в Telegram</a>
+    </div>
+  </div></header>
+  <main class="container">
+    <div class="filters sans">
+      <button class="chip active" data-filter="all" type="button">Все</button>
+      <button class="chip" data-filter="adhd" type="button">СДВГ</button>
+      <button class="chip" data-filter="rel" type="button">Отношения</button>
+      <button class="chip" data-filter="theta" type="button">Тетахилинг</button>
+    </div>
+    <section class="train-banner sans" data-cat="theta">
+      <h2>Обучение Тетахилинг онлайн</h2>
+      <p>Базовый, продвинутый и глубинные курсы. 40+ потоков, 7000+ часов сессий.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvnu4ZwKPDZ0CNm-iMFhHSNYtqA1Dc70uJdz0Eew2VH879sQ/viewform?usp=sharing" target="_blank" rel="noopener">Анкета предзаписи</a>
+        <a class="btn btn-ghost" href="https://taplink.cc/pogore__lova/p/fde89f/" target="_blank" rel="noopener">Программа на Taplink</a>
+        <a class="btn btn-ghost" href="https://youtu.be/-oKGGDLExgo" target="_blank" rel="noopener">Видео про обучение</a>
+      </div>
+    </section>
+    <div class="articles">
+      <article class="article" data-cat="adhd">
+        <span class="tag sans">СДВГ</span>
+        <h2>Я проиграла генетическую лотерею</h2>
+        <p class="quote">«Когда разобралась с РАС и СДВГ, поняла: к этим названиям идёт много “подарков”.»</p>
+        <p>Честный разбор нейроотличий: качели энергии, отлёт, гиперчувствительность — и как с этим жить, а не воевать с собой.</p>
+        <div class="article-links sans">
+          <a href="https://t.me/marina_german_potok_fm/6744" target="_blank" rel="noopener">Пост →</a>
+          <a href="https://psytests.org/diag/asrs-run.html" target="_blank" rel="noopener">Тест ASRS →</a>
+        </div>
+      </article>
+      <article class="article" data-cat="adhd">
+        <span class="tag sans">СДВГ</span>
+        <h2>Когда отдых не даёт сил</h2>
+        <p class="quote">«Чем больше отдыхаешь, тем меньше сил — возможно, ты делаешь слишком мало.»</p>
+        <p>Для части людей с СДВГ колесо раскручивается от движения. Гипотеза под ваш тип нервной системы.</p>
+        <div class="article-links sans"><a href="https://t.me/marina_german_potok_fm/5515" target="_blank" rel="noopener">Пост →</a></div>
+      </article>
+      <article class="article" data-cat="rel">
+        <span class="tag sans">Отношения</span>
+        <h2>Роли жертвы, тирана и спасателя</h2>
+        <p class="quote">«Шла злющая на мужа — а дело было во мне и в старых паттернах.»</p>
+        <p>Как семейные сценарии повторяются в паре и на работе — и где начинается мягкий сдвиг.</p>
+        <div class="article-links sans">
+          <a href="https://t.me/marina_german_potok_fm" target="_blank" rel="noopener">Канал →</a>
+          <a href="course-935416568.html">PRO Отношения →</a>
+        </div>
+      </article>
+      <article class="article" data-cat="rel">
+        <span class="tag sans">Отношения</span>
+        <h2>Искажённая женственность и деньги</h2>
+        <p class="quote">«Думала, мало делаю. В Тетахилинг увидела: дело ещё во внутренних программах.»</p>
+        <p>Много действий снаружи — сопротивление внутри. Связка пары, самооценки и денег.</p>
+        <div class="article-links sans"><a href="https://t.me/marina_german_potok_fm" target="_blank" rel="noopener">Канал →</a></div>
+      </article>
+      <article class="article" data-cat="theta">
+        <span class="tag sans">Тетахилинг</span>
+        <h2>Чем я могу помочь на сессии</h2>
+        <p>Сессия — работа с программами и чувствами в безопасном поле. Дальше: разовые встречи, сопровождение или обучение методу.</p>
+        <div class="article-links sans">
+          <a href="https://t.me/marina_german_potok_fm/7373" target="_blank" rel="noopener">Пост про сессии →</a>
+          <a href="https://t.me/marina_germann" target="_blank" rel="noopener">Записаться →</a>
+        </div>
+      </article>
+      <article class="article" data-cat="theta">
+        <span class="tag sans">Тетахилинг</span>
+        <h2>Зачем учиться методу</h2>
+        <p>40+ потоков обучения. Не разовое чудо, а навык видеть и менять свои программы.</p>
+        <div class="article-links sans">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScvnu4ZwKPDZ0CNm-iMFhHSNYtqA1Dc70uJdz0Eew2VH879sQ/viewform?usp=sharing" target="_blank" rel="noopener">Анкета →</a>
+          <a href="https://taplink.cc/pogore__lova/p/fde89f/" target="_blank" rel="noopener">Taplink →</a>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer sans"><div class="container">
+    <p>ИП Герман Марина Олеговна</p>
+    <p style="margin-top:.5rem"><a href="index.html">АКЦИЯ в мои 43</a> · <a href="kursy.html">Курсы</a> · <a href="marina-german.html">Обо мне</a> · <a href="otzyvy.html">Отзывы</a></p>
+  </div></footer>
+  <script>
+    const chips=[...document.querySelectorAll('.chip')];
+    const items=[...document.querySelectorAll('.article,.train-banner')];
+    chips.forEach(chip=>chip.addEventListener('click',()=>{
+      chips.forEach(c=>c.classList.remove('active')); chip.classList.add('active');
+      const f=chip.dataset.filter;
+      items.forEach(el=>{ el.style.display=(f==='all'||el.dataset.cat===f)?'':'none'; });
+    }));
+  </script>
+</body>
+</html>
