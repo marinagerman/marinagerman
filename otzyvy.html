@@ -150,6 +150,89 @@
     }
     /* /gold-btn-shine */
 
+  
+
+    /* mobile-topbar-fix */
+    @media (max-width: 900px) {
+      .topbar-inner {
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        gap: 0.45rem !important;
+        padding: 0.55rem 0 0.7rem !important;
+      }
+      .logo-link { order: 1; flex-shrink: 0; }
+      .logo-img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .logo-word { display: none !important; }
+      .nav-pages {
+        order: 3;
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0.35rem !important;
+        max-height: 9.5rem;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: 0.15rem 0.1rem 0.35rem;
+        border-top: 1px solid rgba(197,160,112,.18);
+        margin-top: 0.15rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(197,160,112,.55) transparent;
+      }
+      .nav-pages a {
+        width: 100%;
+        text-align: center;
+        font-size: 0.68rem !important;
+        padding: 0.55rem 0.75rem !important;
+        letter-spacing: 0.05em !important;
+      }
+      .top-actions {
+        order: 2;
+        margin-left: auto;
+        flex: 1 1 auto;
+        width: auto !important;
+        max-width: calc(100% - 60px);
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0.3rem !important;
+        max-height: 6.8rem;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(197,160,112,.55) transparent;
+      }
+      .top-actions .top-btn,
+      .top-actions .top-phone {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.62rem !important;
+        padding: 0.45rem 0.55rem !important;
+        white-space: nowrap;
+      }
+      .topbar-inner > .top-btn.accent {
+        order: 2;
+        margin-left: auto;
+        font-size: 0.62rem !important;
+        padding: 0.45rem 0.7rem !important;
+      }
+    }
+    /* /mobile-topbar-fix */
+
   </style>
 </head>
 <body>
@@ -185,22 +268,24 @@
       <h2 class="sans">Скриншоты и отзывы · листайте →</h2>
       <div class="carousel-wrap">
         <div class="carousel" id="reviewsCarousel" tabindex="0" aria-label="Карусель отзывов">
-        <figure class="slide"><img src="reviews/carousel/c01-maria.jpg" alt="Отзыв 1" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c02-collage.jpg" alt="Отзыв 2" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c03-piece.jpg" alt="Отзыв 3" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c04-piece.jpg" alt="Отзыв 4" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c05-piece.jpg" alt="Отзыв 5" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c06-panel.jpg" alt="Отзыв 6" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c07-panel.jpg" alt="Отзыв 7" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c08-card-maria.jpg" alt="Отзыв 8" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c09-card-ekaterina.jpg" alt="Отзыв 9" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c10-card-svetlana.jpg" alt="Отзыв 10" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c11-card-base.jpg" alt="Отзыв 11" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c12-card-info.jpg" alt="Отзыв 12" loading="lazy"></figure>
-        <figure class="slide"><img src="reviews/carousel/c13-card-day1.jpg" alt="Отзыв 13" loading="lazy"></figure>
-        </div>
+        <figure class="slide"><img src="review-panel-1.png" alt="Отзыв 1" loading="lazy"></figure>
+        <figure class="slide"><img src="panel-reviews-2.jpg" alt="Отзыв 2" loading="lazy"></figure>
+        <figure class="slide"><img src="panel-reviews-channel.jpg" alt="Отзыв 3" loading="lazy"></figure>
+        <figure class="slide"><img src="c01-maria.jpg" alt="Отзыв 4" loading="lazy"></figure>
+        <figure class="slide"><img src="c02-collage.jpg" alt="Отзыв 5" loading="lazy"></figure>
+        <figure class="slide"><img src="c03-piece.jpg" alt="Отзыв 6" loading="lazy"></figure>
+        <figure class="slide"><img src="c04-piece.jpg" alt="Отзыв 7" loading="lazy"></figure>
+        <figure class="slide"><img src="c05-piece.jpg" alt="Отзыв 8" loading="lazy"></figure>
+        <figure class="slide"><img src="c06-panel.jpg" alt="Отзыв 9" loading="lazy"></figure>
+        <figure class="slide"><img src="c07-panel.jpg" alt="Отзыв 10" loading="lazy"></figure>
+        <figure class="slide"><img src="c08-card-maria.jpg" alt="Отзыв 11" loading="lazy"></figure>
+        <figure class="slide"><img src="c09-card-ekaterina.jpg" alt="Отзыв 12" loading="lazy"></figure>
+        <figure class="slide"><img src="c10-card-svetlana.jpg" alt="Отзыв 13" loading="lazy"></figure>
+        <figure class="slide"><img src="c11-card-base.jpg" alt="Отзыв 14" loading="lazy"></figure>
+        <figure class="slide"><img src="c12-card-info.jpg" alt="Отзыв 15" loading="lazy"></figure>
+        <figure class="slide"><img src="c13-card-day1.jpg" alt="Отзыв 16" loading="lazy"></figure>
         <div class="carousel-nav sans">
-          <span class="hint" id="carouselHint">1 / 13 · можно листать пальцем или стрелками</span>
+          <span class="hint" id="carouselHint">1 / 16 · можно листать пальцем или стрелками</span>
           <div class="carousel-btns">
             <button class="cbtn" type="button" id="prevBtn" aria-label="Назад">‹</button>
             <button class="cbtn" type="button" id="nextBtn" aria-label="Вперёд">›</button>

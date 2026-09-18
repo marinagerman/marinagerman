@@ -130,6 +130,89 @@
     }
     /* /gold-btn-shine */
 
+  
+
+    /* mobile-topbar-fix */
+    @media (max-width: 900px) {
+      .topbar-inner {
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        gap: 0.45rem !important;
+        padding: 0.55rem 0 0.7rem !important;
+      }
+      .logo-link { order: 1; flex-shrink: 0; }
+      .logo-img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .logo-word { display: none !important; }
+      .nav-pages {
+        order: 3;
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0.35rem !important;
+        max-height: 9.5rem;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: 0.15rem 0.1rem 0.35rem;
+        border-top: 1px solid rgba(197,160,112,.18);
+        margin-top: 0.15rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(197,160,112,.55) transparent;
+      }
+      .nav-pages a {
+        width: 100%;
+        text-align: center;
+        font-size: 0.68rem !important;
+        padding: 0.55rem 0.75rem !important;
+        letter-spacing: 0.05em !important;
+      }
+      .top-actions {
+        order: 2;
+        margin-left: auto;
+        flex: 1 1 auto;
+        width: auto !important;
+        max-width: calc(100% - 60px);
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0.3rem !important;
+        max-height: 6.8rem;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(197,160,112,.55) transparent;
+      }
+      .top-actions .top-btn,
+      .top-actions .top-phone {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.62rem !important;
+        padding: 0.45rem 0.55rem !important;
+        white-space: nowrap;
+      }
+      .topbar-inner > .top-btn.accent {
+        order: 2;
+        margin-left: auto;
+        font-size: 0.62rem !important;
+        padding: 0.45rem 0.7rem !important;
+      }
+    }
+    /* /mobile-topbar-fix */
+
   </style>
 </head>
 <body>
