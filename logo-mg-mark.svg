@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="  0@8=0 5@<0=">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d9a8"/>
+      <stop offset="45%" stop-color="#c5a070"/>
+      <stop offset="100%" stop-color="#8a6a3d"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9a7a4f"/>
+      <stop offset="50%" stop-color="#e0c08a"/>
+      <stop offset="100%" stop-color="#c5a070"/>
+    </linearGradient>
+  </defs>
+  <!-- ornamental ring -->
+  <circle cx="120" cy="120" r="104" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="120" cy="120" r="96" fill="none" stroke="url(#goldSoft)" stroke-width="0.7" opacity="0.55"/>
+  <!-- flourishes top -->
+  <path fill="none" stroke="url(#gold)" stroke-width="1.2" d="M120 18c8 10 18 16 28 18-12 2-22 10-28 22-6-12-16-20-28-22 10-2 20-8 28-18z"/>
+  <path fill="none" stroke="url(#gold)" stroke-width="1.1" d="M72 48c14-6 28-4 40 6M168 48c-14-6-28-4-40 6"/>
+  <!-- flourishes bottom -->
+  <path fill="none" stroke="url(#gold)" stroke-width="1.2" d="M120 222c-8-10-18-16-28-18 12-2 22-10 28-22 6 12 16 20 28 22-10 2-20 8-28 18z"/>
+  <path fill="none" stroke="url(#gold)" stroke-width="1.1" d="M72 192c14 6 28 4 40-6M168 192c-14 6-28 4-40-6"/>
+  <!-- side scrolls -->
+  <path fill="none" stroke="url(#goldSoft)" stroke-width="1" d="M28 120c8-22 22-36 40-42M212 120c-8-22-22-36-40-42M28 120c8 22 22 36 40 42M212 120c-8 22-22 36-40 42"/>
+  <!-- monogram  -->
+  <text x="120" y="138" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" fill="url(#gold)" letter-spacing="-2"></text>
+</svg>
