@@ -146,38 +146,47 @@
       font-family: system-ui, sans-serif;
     }
     .tools a:hover, .tools button:hover { border-color: var(--gold); color: #fff; }
-    details.transcript {
+    .text-panel {
       margin-top: 1rem;
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--panel);
       overflow: hidden;
     }
-    details.transcript summary {
-      list-style: none;
+    .tabs {
+      display: flex;
+      gap: .25rem;
+      padding: .55rem .55rem 0;
+      border-bottom: 1px solid rgba(197,160,112,.18);
+    }
+    .tab {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: .7rem .95rem;
       cursor: pointer;
-      padding: 1rem 1.1rem;
-      color: var(--gold-bright);
       font-family: system-ui, sans-serif;
-      font-size: .85rem;
+      font-size: .78rem;
       font-weight: 700;
       letter-spacing: .04em;
       text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
     }
-    details.transcript summary::-webkit-details-marker { display: none; }
-    details.transcript summary::after { content: " ▾"; opacity: .7; }
-    details.transcript[open] summary::after { content: " ▴"; }
-    .transcript-body {
-      padding: 0 1.1rem 1.2rem;
+    .tab:hover { color: var(--gold-bright); }
+    .tab.active {
+      color: var(--gold-bright);
+      border-bottom-color: var(--gold);
+    }
+    .tab-body {
+      padding: 1rem 1.1rem 1.2rem;
       color: #e8e0d6;
       font-size: .95rem;
       white-space: pre-wrap;
       max-height: 55vh;
       overflow: auto;
-      border-top: 1px solid rgba(197,160,112,.18);
-      padding-top: 1rem;
     }
-    .transcript-body.loading { color: var(--muted); }
+    .tab-body.loading { color: var(--muted); }
     .note {
       margin-top: 1.1rem;
       padding: 1rem 1.1rem;
@@ -205,7 +214,7 @@
     <aside class="side">
       <div class="brand sans">Личный доступ · навсегда</div>
       <h1>КПТ СДВГ</h1>
-      <p>Архив 4-го потока. Видео, материалы и транскрипты — с любого устройства.</p>
+      <p>Архив 4-го потока. Видео, выжимки, транскрипты и материалы — с любого устройства.</p>
       <nav class="lessons sans" id="lessons"></nav>
       <div class="side-block sans">
         <h3>Материалы курса</h3>
@@ -225,10 +234,13 @@
         <div class="wait sans">Видео загружается на Кинескоп…</div>
       </div>
       <div class="tools sans" id="tools"></div>
-      <details class="transcript" id="transcriptBox">
-        <summary>Транскрипт семинара</summary>
-        <div class="transcript-body loading" id="transcriptBody">Открой, чтобы загрузить текст.</div>
-      </details>
+      <div class="text-panel">
+        <div class="tabs sans" id="tabs">
+          <button class="tab active" type="button" data-tab="summary">Выжимка</button>
+          <button class="tab" type="button" data-tab="transcript">Транскрипт</button>
+        </div>
+        <div class="tab-body loading" id="tabBody">Загружаю…</div>
+      </div>
       <div class="note">
         Это твоя личная страница-школа. Доступ не зависит от GetCourse.
         Если что-то не открывается — напиши Татьяне: <a href="https://t.me/tatiana_tandem">@tatiana_tandem</a>
@@ -255,10 +267,11 @@
     const metaEl = document.getElementById("meta");
     const playerEl = document.getElementById("player");
     const toolsEl = document.getElementById("tools");
-    const box = document.getElementById("transcriptBox");
-    const body = document.getElementById("transcriptBody");
+    const tabsEl = document.getElementById("tabs");
+    const body = document.getElementById("tabBody");
     let current = 0;
-    const cache = {};
+    let activeTab = "summary";
+    const cache = { summary: {}, transcript: {} };
 
     function pad(n) { return String(n).padStart(2, "0"); }
 
@@ -268,31 +281,46 @@
       ).join("");
     }
 
+    function renderTabs() {
+      tabsEl.querySelectorAll(".tab").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === activeTab);
+      });
+    }
+
     function renderTools(n) {
-      const base = `sdvg-transcripts/${pad(n)}-seminar`;
+      const tBase = `sdvg-transcripts/${pad(n)}-seminar`;
+      const sBase = `sdvg-summaries/${pad(n)}-seminar-summary`;
       toolsEl.innerHTML = `
-        <a href="${base}-plain.txt" download>Скачать текст</a>
-        <a href="${base}.txt" download>Скачать с таймкодами</a>
+        <a href="${sBase}.txt" download>Скачать выжимку</a>
+        <a href="${tBase}-plain.txt" download>Скачать транскрипт</a>
+        <a href="${tBase}.txt" download>Скачать с таймкодами</a>
       `;
     }
 
-    async function loadTranscript(n) {
-      if (cache[n]) {
-        body.textContent = cache[n];
+    function fileUrl(kind, n) {
+      if (kind === "summary") return `sdvg-summaries/${pad(n)}-seminar-summary.txt`;
+      return `sdvg-transcripts/${pad(n)}-seminar-plain.txt`;
+    }
+
+    async function loadText(kind, n) {
+      if (cache[kind][n]) {
+        body.textContent = cache[kind][n];
         body.classList.remove("loading");
         return;
       }
       body.classList.add("loading");
-      body.textContent = "Загружаю транскрипт…";
+      body.textContent = kind === "summary" ? "Загружаю выжимку…" : "Загружаю транскрипт…";
       try {
-        const r = await fetch(`sdvg-transcripts/${pad(n)}-seminar-plain.txt`, { cache: "no-store" });
+        const r = await fetch(fileUrl(kind, n), { cache: "no-store" });
         if (!r.ok) throw new Error(String(r.status));
         const t = await r.text();
-        cache[n] = t.trim() || "Пустой файл.";
-        body.textContent = cache[n];
+        cache[kind][n] = t.trim() || "Пустой файл.";
+        body.textContent = cache[kind][n];
         body.classList.remove("loading");
       } catch (e) {
-        body.textContent = "Транскрипт ещё готовится. Обнови страницу чуть позже или скачай файл, когда появится.";
+        body.textContent = kind === "summary"
+          ? "Выжимка ещё не загружена. Обнови страницу чуть позже."
+          : "Транскрипт ещё готовится. Обнови страницу чуть позже.";
         body.classList.add("loading");
       }
     }
@@ -303,19 +331,22 @@
       titleEl.textContent = l.title;
       metaEl.textContent = `Семинар ${l.n} из 10`;
       renderTools(l.n);
-      box.open = false;
-      body.textContent = "Открой, чтобы загрузить текст.";
-      body.classList.add("loading");
+      renderTabs();
       if (l.embed) {
         playerEl.innerHTML = `<iframe src="${l.embed}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>`;
       } else {
         playerEl.innerHTML = `<div class="wait sans">Семинар №${l.n} ещё заливается на Кинескоп.<br>Зайди чуть позже или выбери другой урок.</div>`;
       }
       renderNav();
+      loadText(activeTab, l.n);
     }
 
-    box.addEventListener("toggle", () => {
-      if (box.open) loadTranscript(LESSONS[current].n);
+    tabsEl.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-tab]");
+      if (!btn) return;
+      activeTab = btn.dataset.tab;
+      renderTabs();
+      loadText(activeTab, LESSONS[current].n);
     });
 
     nav.addEventListener("click", (e) => {
