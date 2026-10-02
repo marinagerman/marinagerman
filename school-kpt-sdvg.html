@@ -83,6 +83,29 @@
       font-size: .75rem;
       font-weight: 700;
     }
+    .side-block {
+      margin-top: 1.4rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+    .side-block h3 {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .55rem;
+    }
+    .file-list { display: grid; gap: .35rem; }
+    .file-list a {
+      display: block;
+      padding: .45rem .55rem;
+      border: 1px solid rgba(197,160,112,.25);
+      border-radius: 10px;
+      color: var(--gold-bright);
+      font-size: .78rem;
+      line-height: 1.35;
+    }
+    .file-list a:hover { border-color: var(--gold); background: rgba(197,160,112,.08); }
     .main { padding: 1.5rem 1.5rem 3rem; }
     .meta { color: var(--muted); font-size: .9rem; margin-bottom: .75rem; }
     .main h2 { font-size: clamp(1.3rem, 2.5vw, 1.85rem); letter-spacing: .03em; }
@@ -103,6 +126,58 @@
       padding: 2rem;
       text-align: center;
     }
+    .tools {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .tools a, .tools button {
+      border: 1px solid rgba(197,160,112,.4);
+      background: linear-gradient(180deg, rgba(28,24,20,.95), rgba(12,10,8,.95));
+      color: var(--gold-bright);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: system-ui, sans-serif;
+    }
+    .tools a:hover, .tools button:hover { border-color: var(--gold); color: #fff; }
+    details.transcript {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+    details.transcript summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.1rem;
+      color: var(--gold-bright);
+      font-family: system-ui, sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    details.transcript summary::-webkit-details-marker { display: none; }
+    details.transcript summary::after { content: " ▾"; opacity: .7; }
+    details.transcript[open] summary::after { content: " ▴"; }
+    .transcript-body {
+      padding: 0 1.1rem 1.2rem;
+      color: #e8e0d6;
+      font-size: .95rem;
+      white-space: pre-wrap;
+      max-height: 55vh;
+      overflow: auto;
+      border-top: 1px solid rgba(197,160,112,.18);
+      padding-top: 1rem;
+    }
+    .transcript-body.loading { color: var(--muted); }
     .note {
       margin-top: 1.1rem;
       padding: 1rem 1.1rem;
@@ -130,15 +205,30 @@
     <aside class="side">
       <div class="brand sans">Личный доступ · навсегда</div>
       <h1>КПТ СДВГ</h1>
-      <p>Архив 4-го потока. Видео на Кинескопе — открывается с любого устройства по этой ссылке.</p>
+      <p>Архив 4-го потока. Видео, материалы и транскрипты — с любого устройства.</p>
       <nav class="lessons sans" id="lessons"></nav>
+      <div class="side-block sans">
+        <h3>Материалы курса</h3>
+        <div class="file-list">
+          <a href="sdvg-materials/01-kurs-kpt-sdvg.pdf" download>Курс КПТ СДВГ.pdf</a>
+          <a href="sdvg-materials/02-asrs.pdf" download>Опросник ASRS.pdf</a>
+          <a href="sdvg-materials/03-diva-5.pdf" download>DIVA-5.pdf</a>
+          <a href="sdvg-materials/04-criteria.docx" download>Критерии СДВГ.docx</a>
+          <a href="sdvg-materials/05-hyperfocus.pdf" download>Гиперфокус.pdf</a>
+        </div>
+      </div>
     </aside>
     <main class="main">
       <div class="meta sans" id="meta">Семинар 1 из 10</div>
       <h2 id="title">Семинар №1</h2>
       <div class="player" id="player">
-        <div class="wait sans">Видео загружается на Кинескоп…<br>страница обновится, когда эмбеды будут готовы.</div>
+        <div class="wait sans">Видео загружается на Кинескоп…</div>
       </div>
+      <div class="tools sans" id="tools"></div>
+      <details class="transcript" id="transcriptBox">
+        <summary>Транскрипт семинара</summary>
+        <div class="transcript-body loading" id="transcriptBody">Открой, чтобы загрузить текст.</div>
+      </details>
       <div class="note">
         Это твоя личная страница-школа. Доступ не зависит от GetCourse.
         Если что-то не открывается — напиши Татьяне: <a href="https://t.me/tatiana_tandem">@tatiana_tandem</a>
@@ -147,7 +237,6 @@
     </main>
   </div>
   <script>
-    // Заполняется после заливки на Кинескоп: embed = полный iframe src
     const LESSONS = [
       { n: 1, title: "Семинар №1", embed: "https://kinescope.io/embed/697b05d8-22e3-456a-9519-2f235ff04d84" },
       { n: 2, title: "Семинар №2", embed: "https://kinescope.io/embed/323e3f38-c747-4d18-b246-2781f504c845" },
@@ -165,7 +254,13 @@
     const titleEl = document.getElementById("title");
     const metaEl = document.getElementById("meta");
     const playerEl = document.getElementById("player");
+    const toolsEl = document.getElementById("tools");
+    const box = document.getElementById("transcriptBox");
+    const body = document.getElementById("transcriptBody");
     let current = 0;
+    const cache = {};
+
+    function pad(n) { return String(n).padStart(2, "0"); }
 
     function renderNav() {
       nav.innerHTML = LESSONS.map((l, i) =>
@@ -173,11 +268,44 @@
       ).join("");
     }
 
+    function renderTools(n) {
+      const base = `sdvg-transcripts/${pad(n)}-seminar`;
+      toolsEl.innerHTML = `
+        <a href="${base}-plain.txt" download>Скачать текст</a>
+        <a href="${base}.txt" download>Скачать с таймкодами</a>
+      `;
+    }
+
+    async function loadTranscript(n) {
+      if (cache[n]) {
+        body.textContent = cache[n];
+        body.classList.remove("loading");
+        return;
+      }
+      body.classList.add("loading");
+      body.textContent = "Загружаю транскрипт…";
+      try {
+        const r = await fetch(`sdvg-transcripts/${pad(n)}-seminar-plain.txt`, { cache: "no-store" });
+        if (!r.ok) throw new Error(String(r.status));
+        const t = await r.text();
+        cache[n] = t.trim() || "Пустой файл.";
+        body.textContent = cache[n];
+        body.classList.remove("loading");
+      } catch (e) {
+        body.textContent = "Транскрипт ещё готовится. Обнови страницу чуть позже или скачай файл, когда появится.";
+        body.classList.add("loading");
+      }
+    }
+
     function show(i) {
       current = i;
       const l = LESSONS[i];
       titleEl.textContent = l.title;
       metaEl.textContent = `Семинар ${l.n} из 10`;
+      renderTools(l.n);
+      box.open = false;
+      body.textContent = "Открой, чтобы загрузить текст.";
+      body.classList.add("loading");
       if (l.embed) {
         playerEl.innerHTML = `<iframe src="${l.embed}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>`;
       } else {
@@ -185,6 +313,10 @@
       }
       renderNav();
     }
+
+    box.addEventListener("toggle", () => {
+      if (box.open) loadTranscript(LESSONS[current].n);
+    });
 
     nav.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-i]");
