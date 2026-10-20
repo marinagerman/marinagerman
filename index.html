@@ -43,29 +43,29 @@
     .hero-photo {
       position: relative;
       overflow: hidden;
-      min-height: min(86vh, 820px);
       border-bottom: 1px solid rgba(197, 160, 112, 0.2);
-      background-color: #050505;
-      background-image:
-        linear-gradient(90deg, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.45) 40%, rgba(5,5,5,0.12) 65%, transparent 85%),
-        linear-gradient(180deg, transparent 48%, rgba(5,5,5,0.4) 75%, #050505 100%),
-        url("marina-avatar.webp");
-      background-repeat: no-repeat;
-      background-position: center, center, center 16%;
-      background-size: auto, auto, cover;
+      background: #0a0908;
       padding-top: 0;
     }
     .hero-photo::after { display: none; }
+    .hero-banner-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: min(72vh, 720px);
+      object-fit: cover;
+      object-position: center center;
+      border: 0;
+    }
     .hero-inner {
       position: relative;
       z-index: 1;
       display: flex;
-      min-height: inherit;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: flex-start;
-      padding: 26vh 0 2.2rem;
-      background: transparent;
+      padding: 1.35rem 0 1.85rem;
+      background: linear-gradient(180deg, #0c0a08 0%, #050505 100%);
     }
     .brand {
       font-size: 0.72rem;
@@ -474,32 +474,27 @@
       white-space: nowrap;
     }
     .top-phone:hover { color: #fff; }
-@media (max-width: 900px) {
+    @media (max-width: 900px) {
       .hero-photo {
-        min-height: min(68vh, 560px);
         width: 100%;
-        background-image:
-          linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.08) 32%, rgba(5,5,5,0.5) 55%, rgba(5,5,5,0.94) 80%, #050505 100%),
-          url("marina-avatar.webp");
-        background-size: cover;
-        background-position: center top;
         padding-top: 0;
         margin-top: 0;
       }
+      .hero-banner-img {
+        max-height: none;
+        object-fit: contain;
+        background: #0a0908;
+      }
       .hero-inner {
-        min-height: inherit;
-        padding: 40vh 0 1.25rem;
-        justify-content: flex-end;
-        background: transparent;
+        padding: 1.1rem 0 1.35rem;
+        justify-content: flex-start;
       }
       .hero .brand,
       .hero .hero-sub,
       .hero .sale-dates {
         max-width: none;
         width: 100%;
-        text-align: justify;
-        text-align-last: left;
-        hyphens: auto;
+        text-align: left;
       }
       .hero h1 {
         font-size: clamp(1.3rem, 5.2vw, 1.75rem);
@@ -512,12 +507,7 @@
     }
     @media (max-width: 600px) {
       .count-note { margin-left: 0; width: 100%; }
-      .hero-photo {
-        min-height: min(62vh, 500px);
-        background-size: cover;
-        background-position: center top;
-      }
-      .hero-inner { padding: 36vh 0 1.1rem; }
+      .hero-inner { padding: 1rem 0 1.2rem; }
       .hero .brand { margin-bottom: 0; letter-spacing: 0.12em; }
       .hero h1 { margin-top: 0.35rem; }
       .hero-sub { margin-top: 0.5rem; font-size: 0.82rem; }
@@ -810,12 +800,15 @@
   </div>
 
   <header class="hero-photo hero">
+    <picture>
+      <source srcset="hero-tebe-mozhno.webp" type="image/webp">
+      <img class="hero-banner-img" src="hero-tebe-mozhno.jpg" width="1600" height="594" alt="Тебе можно легче — Марина Герман, психолог и коуч ICF, работа со СДВГ">
+    </picture>
     <div class="container hero-inner">
-      <p class="brand sans">Марина Герман · Инструктор Тетахилинг · расстановщик · таролог</p>
-      <h1 class="sans">Марина Герман</h1>
-      <p class="hero-sub sans">Инструктор Тетахилинг, расстановщик, практик Метода легализации правды, практик Access bars, таролог. Более 7000 часов сессий и 40+ потоков обучения Тетахилинг.</p>
-      <p class="hero-sub sans" style="margin-top:0.75rem"><strong style="color:var(--gold-bright)">ТЕБЕ МОЖНО ЛЕГЧЕ</strong> — 15 авторских программ по специальной цене. Вебинар или одна запись — <strong style="color:var(--gold-bright)">499 ₽</strong>, курсы и марафоны — <strong style="color:var(--gold-bright)">999 ₽</strong>. После оплаты доступ на ваш email.</p>
-      <p class="hero-sub sans sale-dates" style="margin-top:0.85rem;color:var(--gold-bright)">26 сентября — день рождения Марины. В честь этого — <strong>акция 43%</strong>: старт <strong>19 сентября</strong>, до <strong>3 октября</strong>. Тёплый подарок себе — пока окно открыто.</p>
+      <p class="brand sans">Акция на сайте · доступ после оплаты на email</p>
+      <h1 class="sans">15 авторских программ</h1>
+      <p class="hero-sub sans" style="margin-top:0.75rem">Вебинар или одна запись — <strong style="color:var(--gold-bright)">499 ₽</strong>, курсы и марафоны — <strong style="color:var(--gold-bright)">999 ₽</strong>. После оплаты доступ на ваш email.</p>
+      <p class="hero-sub sans sale-dates" style="margin-top:0.85rem;color:var(--gold-bright)">26 сентября — день рождения Марины. В честь этого — <strong>акция 43%</strong>: старт <strong>19 сентября</strong>, до <strong>3 октября</strong>.</p>
 
       <div class="stats sans">
         <div class="stat"><div class="stat-val" id="stat-total">—</div><div class="stat-lbl">курсов в акции</div></div>
@@ -823,7 +816,7 @@
         <div class="stat"><div class="stat-val" id="stat-999">—</div><div class="stat-lbl">по 999 ₽</div></div>
       </div>
       <p class="hero-sub sans" style="margin-top:1.25rem;font-size:0.9rem">
-        После оплаты доступ на ваш email. Видео на Кинескоп — обычно без VPN, из любой точки мира. Если письма нет — напишите в Telegram.
+        Видео на Кинескоп — обычно без VPN. Если письма нет — напишите в Telegram.
         <a href="https://t.me/marina_germann" style="color:var(--gold-bright);text-decoration:underline;margin-left:0.25rem">Написать в Telegram →</a>
       </p>
     </div>
