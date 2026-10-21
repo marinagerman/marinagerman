@@ -48,15 +48,74 @@
       padding-top: 0;
     }
     .hero-photo::after { display: none; }
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2000 / 742;
+      max-height: min(72vh, 720px);
+      background: #0a0908;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .7s ease;
+      pointer-events: none;
+    }
+    .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
     .hero-banner-img {
       display: block;
       width: 100%;
-      height: auto;
-      max-height: min(72vh, 720px);
+      height: 100%;
       object-fit: cover;
       object-position: center center;
       border: 0;
     }
+    .hero-dots {
+      position: absolute;
+      left: 50%;
+      bottom: .85rem;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: .45rem;
+    }
+    .hero-dots button {
+      width: .55rem;
+      height: .55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(224, 192, 138, .7);
+      background: rgba(0,0,0,.35);
+      padding: 0;
+      cursor: pointer;
+    }
+    .hero-dots button.is-active {
+      background: linear-gradient(135deg, #e0c08a, #c5a070);
+      border-color: #e0c08a;
+      width: 1.35rem;
+    }
+    .hero-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(197,160,112,.45);
+      background: rgba(8,7,6,.55);
+      color: #e0c08a;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .hero-nav-btn.prev { left: .7rem; }
+    .hero-nav-btn.next { right: .7rem; }
+    .hero-nav-btn:hover { border-color: #e0c08a; color: #fff; }
     .hero-inner {
       position: relative;
       z-index: 1;
@@ -573,11 +632,15 @@
         padding-top: 0;
         margin-top: 0;
       }
-      .hero-banner-img {
+      .hero-slider {
         max-height: none;
-        object-fit: contain;
+        aspect-ratio: 2000 / 742;
+      }
+      .hero-banner-img {
+        object-fit: cover;
         background: #0a0908;
       }
+      .hero-nav-btn { width: 1.85rem; height: 1.85rem; font-size: 1rem; }
       .hero-inner {
         padding: 1.1rem 0 1.35rem;
         justify-content: flex-start;
@@ -905,10 +968,26 @@
   </div>
 
   <header class="hero-photo hero">
-    <picture>
-      <source srcset="hero-tebe-mozhno.webp" type="image/webp">
-      <img class="hero-banner-img" src="hero-tebe-mozhno.jpg" width="2000" height="742" alt="Тебе можно легче — Марина Герман, психолог и коуч ICF, работа со СДВГ">
-    </picture>
+    <div class="hero-slider" id="heroSlider" aria-roledescription="карусель" aria-label="Баннеры">
+      <div class="hero-slide is-active" data-slide="0">
+        <picture>
+          <source srcset="hero-tebe-mozhno.webp" type="image/webp">
+          <img class="hero-banner-img" src="hero-tebe-mozhno.jpg" width="2000" height="742" alt="Тебе можно легче — Марина Герман" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <picture>
+          <source srcset="banner-chudesa.webp" type="image/webp">
+          <img class="hero-banner-img" src="banner-chudesa.jpg" width="2000" height="742" alt="Чудеса случаются с теми, кто в них верит — Марина Герман" loading="lazy">
+        </picture>
+      </div>
+      <button class="hero-nav-btn prev sans" type="button" aria-label="Предыдущий баннер">‹</button>
+      <button class="hero-nav-btn next sans" type="button" aria-label="Следующий баннер">›</button>
+      <div class="hero-dots sans" role="tablist" aria-label="Выбор баннера">
+        <button type="button" class="is-active" aria-label="Баннер 1" aria-selected="true"></button>
+        <button type="button" aria-label="Баннер 2" aria-selected="false"></button>
+      </div>
+    </div>
     <div class="container hero-inner">
       <p class="brand sans">Подарок после дня рождения · без дедлайна</p>
       <h1 class="sans">Продлила для своих</h1>
@@ -1185,6 +1264,53 @@
       });
     });
     render();
+
+    (function () {
+      var root = document.getElementById("heroSlider");
+      if (!root) return;
+      var slides = Array.prototype.slice.call(root.querySelectorAll(".hero-slide"));
+      var dots = Array.prototype.slice.call(root.querySelectorAll(".hero-dots button"));
+      var prev = root.querySelector(".hero-nav-btn.prev");
+      var next = root.querySelector(".hero-nav-btn.next");
+      var i = 0;
+      var timer = null;
+      function show(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach(function (s, idx) { s.classList.toggle("is-active", idx === i); });
+        dots.forEach(function (d, idx) {
+          d.classList.toggle("is-active", idx === i);
+          d.setAttribute("aria-selected", idx === i ? "true" : "false");
+        });
+      }
+      function start() {
+        stop();
+        timer = setInterval(function () { show(i + 1); }, 5000);
+      }
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+      if (prev) prev.addEventListener("click", function () { show(i - 1); start(); });
+      if (next) next.addEventListener("click", function () { show(i + 1); start(); });
+      dots.forEach(function (d, idx) {
+        d.addEventListener("click", function () { show(idx); start(); });
+      });
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      var touchX = null;
+      root.addEventListener("touchstart", function (e) {
+        touchX = e.changedTouches[0].clientX;
+        stop();
+      }, { passive: true });
+      root.addEventListener("touchend", function (e) {
+        if (touchX == null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+        touchX = null;
+        start();
+      }, { passive: true });
+      start();
+    })();
   </script>
 
   <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
