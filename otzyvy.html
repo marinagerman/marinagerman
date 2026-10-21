@@ -363,6 +363,14 @@
     }
 
     /* /legal-footer-css */
+  
+    /* maker credit */
+    .maker-badge{position:fixed;left:max(.7rem,env(safe-area-inset-left));bottom:max(.7rem,env(safe-area-inset-bottom));z-index:80;max-width:min(92vw,280px)}
+    .maker-badge a{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .75rem .55rem .65rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(8,7,6,.92);backdrop-filter:blur(10px);box-shadow:0 8px 28px rgba(0,0,0,.45);color:#e0c08a;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1.2}
+    .maker-badge a:hover{border-color:#c5a070;color:#fff}
+    .maker-badge .star{color:#e0c08a;font-size:.85rem}
+    .maker-badge .arrow{opacity:.85}
+
   </style>
 </head>
 <body>
@@ -520,5 +528,14 @@
       sync();
     })();
   </script>
+
+  <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
+    <a href="tatiana-zhelikhovskaya.html">
+      <span class="star" aria-hidden="true">★</span>
+      <span>Сайт сделала Татьяна Желиховская</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
 </body>
 </html>
