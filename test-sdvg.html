@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на СДВГ у взрослых — ASRS 1.1 | Марина Герман</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Марина Герман">
+  <meta property="og:title" content="Тест на СДВГ у взрослых — ASRS 1.1">
+  <meta property="og:description" content="Шкала ВОЗ ASRS 1.1: 18 вопросов с автоподсчётом. Скрининг, не диагноз. На сайте Марины Герман.">
+  <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
+  <meta property="og:url" content="https://marinagerman.github.io/marinagerman/test-sdvg.html">
+  <meta name="description" content="Тест на СДВГ у взрослых по шкале ASRS 1.1 (ВОЗ). 18 вопросов, автоподсчёт. Инструмент самооценки от Марины Герман — без перехода на чужие сайты.">
+  <style>
+    :root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+    .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(760px,calc(100% - 2rem));margin:0 auto}
+    .site-topbar{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(197,160,112,.22)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0;min-height:4rem;flex-wrap:wrap}
+    .logo-link{display:inline-flex;align-items:center;gap:.65rem}
+    .logo-img{width:56px;height:56px;object-fit:contain}
+    .logo-word{display:flex;flex-direction:column;line-height:1.15}
+    .logo-word strong{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-bright)}
+    .logo-word span{font-size:.62rem;color:var(--muted)}
+    .nav-pages{display:flex;flex-wrap:wrap;gap:.3rem}
+    .nav-pages a{border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-bright)}
+    .nav-pages a.active,.nav-pages a:hover{border-color:var(--gold);color:#fff}
+    .top-btn{border-radius:999px;padding:.4rem .85rem;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+
+    .hero{padding:2rem 0 1.4rem;border-bottom:1px solid rgba(197,160,112,.16);background:linear-gradient(180deg,#0c0a08,#050505)}
+    .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    h1{margin-top:.55rem;font-size:clamp(1.55rem,3.8vw,2.2rem);line-height:1.15}
+    .sub{margin-top:.35rem;color:var(--gold-bright);font-size:1rem}
+    .intro{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .intro p+p{margin-top:.7rem}
+    .scale{margin-top:1rem;padding:1rem;border:1px solid rgba(197,160,112,.25);border-radius:14px;background:rgba(20,16,12,.55)}
+    .scale strong{color:var(--gold-bright);display:block;margin-bottom:.4rem}
+    .scale ul{margin-left:1.1rem;color:var(--muted);font-size:.9rem}
+    .scale li{margin:.2rem 0}
+
+    .part-label{
+      margin:1.6rem 0 .4rem;padding:.7rem .9rem;border-radius:12px;
+      border:1px solid rgba(197,160,112,.28);background:rgba(197,160,112,.08);
+      font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-bright);font-weight:700;
+    }
+    .part-hint{color:var(--muted);font-size:.88rem;margin:0 0 1rem}
+
+    .progress-wrap{position:sticky;top:4.4rem;z-index:40;background:rgba(5,5,5,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(197,160,112,.14);padding:.55rem 0}
+    .progress-bar{height:6px;border-radius:999px;background:rgba(197,160,112,.15);overflow:hidden}
+    .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dim),var(--gold-bright));transition:width .25s ease}
+    .progress-meta{display:flex;justify-content:space-between;margin-top:.35rem;font-size:.72rem;color:var(--muted)}
+
+    .q{margin:1.1rem 0;padding:1.05rem 1rem 1.1rem;border:1px solid rgba(197,160,112,.22);border-radius:16px;background:linear-gradient(180deg,rgba(28,24,20,.45),rgba(10,9,8,.85))}
+    .q.answered{border-color:rgba(197,160,112,.45)}
+    .q-num{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.35rem}
+    .q-text{font-size:1.02rem;margin-bottom:.75rem}
+    .opts{display:grid;gap:.4rem}
+    .opt{
+      display:flex;align-items:center;gap:.65rem;cursor:pointer;
+      border:1px solid rgba(197,160,112,.22);border-radius:12px;padding:.55rem .7rem;
+      background:rgba(0,0,0,.25);transition:border-color .15s, background .15s;
+    }
+    .opt:hover{border-color:rgba(197,160,112,.5)}
+    .opt input{accent-color:var(--gold);width:1.05rem;height:1.05rem}
+    .opt.selected{border-color:var(--gold);background:rgba(197,160,112,.12)}
+    .opt span{font-size:.88rem;color:var(--muted)}
+    .opt.selected span{color:#fff}
+
+    .submit-row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1.5rem 0 2rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+      border-radius:999px;padding:.75rem 1.25rem;font-size:.78rem;font-weight:700;
+      letter-spacing:.05em;text-transform:uppercase;
+    }
+    .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+    .btn-ghost{border:1px solid rgba(197,160,112,.4);color:var(--gold-bright);background:transparent}
+    .btn:disabled{opacity:.45;cursor:not-allowed}
+    .hint{color:var(--muted);font-size:.85rem}
+
+    .result{display:none;margin:0 0 2rem;padding:1.3rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.35);background:linear-gradient(160deg,rgba(197,160,112,.14),rgba(12,10,8,.92))}
+    .result.show{display:block}
+    .result .score{font-size:clamp(1.7rem,5vw,2.4rem);color:var(--gold-bright);font-weight:700;line-height:1.15}
+    .result .level{margin-top:.55rem;font-size:1.15rem}
+    .result .desc{margin-top:.7rem;color:var(--muted)}
+    .result .meta{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(197,160,112,.2);color:var(--muted);font-size:.9rem}
+    .result .meta strong{color:var(--gold-bright)}
+    .note{margin-top:1rem;font-size:.82rem;color:#8a8278}
+
+    .story{margin:2rem 0;padding:1.25rem 1.1rem;border-radius:18px;border:1px solid rgba(197,160,112,.25);background:rgba(14,12,10,.8)}
+    .story h2{font-size:1.25rem;margin-bottom:.7rem}
+    .story p{color:var(--muted);margin-top:.65rem}
+    .story ul{margin:.7rem 0 0 1.1rem;color:var(--muted)}
+    .story li{margin:.3rem 0}
+
+    .cta{
+      margin:1.4rem 0 2.2rem;padding:1.35rem 1.15rem;border-radius:18px;
+      border:1px solid rgba(197,160,112,.4);
+      background:linear-gradient(135deg,rgba(197,160,112,.18),rgba(12,10,8,.95));
+    }
+    .cta h2{font-size:1.3rem;margin-bottom:.35rem}
+    .cta p{color:var(--muted);margin-top:.55rem}
+    .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
+
+    .links-grid{display:grid;gap:.7rem;margin:1.5rem 0 2rem}
+    .link-card{display:block;padding:1rem;border-radius:14px;border:1px solid rgba(197,160,112,.22);background:rgba(12,10,8,.75)}
+    .link-card strong{display:block;color:var(--gold-bright);margin-bottom:.25rem}
+    .link-card span{color:var(--muted);font-size:.9rem}
+
+    .site-footer{border-top:1px solid rgba(197,160,112,.2);padding:1.5rem 0 2rem}
+    .footer-seller p{margin-top:.3rem;color:var(--muted);font-size:.88rem}
+    .footer-seller strong{color:var(--gold)}
+    .footer-seller a{color:var(--gold-bright);text-decoration:underline;text-underline-offset:2px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1rem}
+    .footer-links a{color:var(--muted);font-size:.78rem}
+    .footer-copy{margin-top:1rem;color:#6f675f;font-size:.75rem}
+
+    @media (max-width:720px){
+      .logo-word{display:none}
+      .progress-wrap{top:3.6rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="site-topbar">
+    <div class="container topbar-inner sans">
+      <a class="logo-link" href="index.html" aria-label="На главную">
+        <img class="logo-img" src="logo-mg.png" width="56" height="56" alt="МГ">
+        <span class="logo-word">
+          <strong>Марина Герман</strong>
+          <span>Тебе можно легче</span>
+        </span>
+      </a>
+      <nav class="nav-pages sans" aria-label="Разделы">
+        <a href="index.html">ДЛЯ СВОИХ</a>
+        <a href="podarki.html">Подарки</a>
+        <a class="active" href="test-sdvg.html">Тест СДВГ</a>
+        <a href="test-depressiya.html">Тест депрессия</a>
+        <a href="sdvg.html">СДВГ</a>
+        <a href="kursy.html">Курсы</a>
+        <a href="marina-german.html">Обо мне</a>
+      </nav>
+      <a class="top-btn" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow sans">Самооценка · не диагноз</p>
+      <h1 class="sans">Тест на СДВГ у взрослых</h1>
+      <p class="sub">шкала ASRS 1.1 (ВОЗ)</p>
+      <div class="intro">
+        <p>Я — Марина Герман, интегративный психолог, коуч ICF, инструктор Тетахилинг, КПТ для людей с СДВГ. Этот тест — тот же инструмент, которым я делюсь в канале, когда речь про склонность к тяжёлым состояниям, упадок сил и «кажется, у меня СДВГ».</p>
+        <p><strong style="color:var(--gold-bright);font-weight:600">Владелец / авторы шкалы:</strong> Adult ADHD Self-Report Scale (ASRS) v1.1 — Всемирная организация здравоохранения (ВОЗ). Разработка: R. Kessler, L. Adler и соавт. (2004–2005).</p>
+        <p><strong style="color:var(--gold-bright);font-weight:600">Русскоязычная апробация:</strong> Д. В. Московченко и соавт. (журнал им. Бехтерева).</p>
+        <p><strong style="color:var(--gold-bright);font-weight:600">Инструкция:</strong> на каждый вопрос выберите ответ, который точнее всего отражает, как вы чувствовали себя и вели в <em>последние 6 месяцев</em>.</p>
+        <p>Онлайн-тест не ставит диагноз. Результат — ориентир для разговора со специалистом.</p>
+      </div>
+      <div class="scale sans">
+        <strong>Шкала ответов</strong>
+        <ul>
+          <li>0 — никогда</li>
+          <li>1 — редко</li>
+          <li>2 — иногда</li>
+          <li>3 — часто</li>
+          <li>4 — очень часто</li>
+        </ul>
+        <p style="margin-top:.65rem;color:var(--muted);font-size:.88rem">Часть A (вопросы 1–6) — скрининг ВОЗ. Часть B (7–18) — дополнительные симптомы для картины. Баллы считаются сами, когда ответите на все 18 вопросов.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="container sans">
+      <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-meta">
+        <span id="progressText">Отвечено 0 из 18</span>
+        <span id="liveScore">Скрининг A: 0 / 6</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <p class="part-label sans">Часть A · скрининг</p>
+    <p class="part-hint">Шесть ключевых вопросов. По методике ВОЗ считается, сколько из них попали в «зону внимания».</p>
+    <form id="asrsForm" novalidate></form>
+
+    <div class="submit-row sans">
+      <button class="btn btn-gold" type="button" id="submitBtn" disabled>Посчитать результат</button>
+      <button class="btn btn-ghost" type="button" id="resetBtn">Сбросить</button>
+      <span class="hint" id="formHint">Ответьте на все 18 вопросов</span>
+    </div>
+
+    <section class="result sans" id="resultBox" aria-live="polite">
+      <div class="score" id="resultScore">0 из 6</div>
+      <div class="level" id="resultLevel"></div>
+      <p class="desc" id="resultDesc"></p>
+      <div class="meta" id="resultMeta"></div>
+      <p class="note">ASRS 1.1 — скрининговая шкала, а не медицинский диагноз. Окончательное заключение даёт врач (психиатр / невролог) по полной диагностике. Если результат настораживает — это повод бережно разобраться, а не поставить себе ярлык.</p>
+    </section>
+
+    <section class="story">
+      <h2 class="sans">Если узнала себя — что дальше?</h2>
+      <p>СДВГ у взрослых часто маскируется под «лень», тревогу, выгорание и качели энергии. Я про это пишу открыто — в том числе в посте «Я проиграла генетическую лотерею».</p>
+      <ul>
+        <li>прочитай опоры на странице про СДВГ — без стыда и «просто соберись»;</li>
+        <li>посмотри статьи: «не лень», «понимаю — не делаю», тревога;</li>
+        <li>если хочешь систему и сопровождение — напиши мне в Telegram.</li>
+      </ul>
+    </section>
+
+    <section class="cta sans">
+      <h2>Работа со СДВГ рядом</h2>
+      <p>Можно начать с бесплатных материалов на сайте или написать мне — подберём формат: обучение, сессии или мягкое сопровождение.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="sdvg.html">Страница про СДВГ</a>
+        <a class="btn btn-ghost" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать Марине</a>
+        <a class="btn btn-ghost" href="stati.html">Статьи</a>
+      </div>
+    </section>
+
+    <div class="links-grid sans">
+      <a class="link-card" href="stati.html">
+        <strong>«Я проиграла генетическую лотерею»</strong>
+        <span>Разбор нейроотличий и «подарков» к диагнозу — в блоке статей</span>
+      </a>
+      <a class="link-card" href="test-depressiya.html">
+        <strong>Тест на депрессию (Бернс)</strong>
+        <span>Если рядом упадок сил и тяжёлое состояние</span>
+      </a>
+      <a class="link-card" href="podarki.html">
+        <strong>Подарки и практики</strong>
+        <span>Бесплатные медитации и опоры</span>
+      </a>
+      <a class="link-card" href="https://t.me/marina_german_potok_fm" target="_blank" rel="noopener">
+        <strong>• Тебе можно легче! • мой тг канал</strong>
+        <span>Посты про СДВГ, ресурс и мягкую структуру</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer sans">
+    <div class="container">
+      <div class="footer-seller">
+        <p><strong>ИП Герман Марина Олеговна</strong></p>
+        <p>Тел.: <a href="tel:+79897001701">+7 989 700 17 01</a></p>
+        <p>Email: <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a></p>
+      </div>
+      <nav class="footer-links" aria-label="Юридические документы">
+        <a href="oferta.html">Публичная оферта</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="consent-pd.html">Согласие на обработку ПДн</a>
+        <a href="requisites.html">Реквизиты</a>
+      </nav>
+      <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Шкала ASRS v1.1 © ВОЗ / авторы Kessler, Adler et al. Размещение на сайте — для самооценки, не коммерческая перепродажа инструмента.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ASRS v1.1 — вопросы 1–18 (Part A + Part B). Шкала: 0–4.
+    // Скрининг Part A (ВОЗ): вопросы 1–3 «зона» при 3–4; 4–6 «зона» при 2–4.
+    // 4+ из 6 в зоне → симптомы согласуются с СДВГ у взрослых.
+    const QUESTIONS = [
+      { part: "A", text: "Как часто у вас возникают трудности с завершением финальных деталей проекта после того, как самые сложные части уже сделаны?" },
+      { part: "A", text: "Как часто вам сложно привести вещи в порядок, когда нужно выполнить задание, требующее организованности?" },
+      { part: "A", text: "Как часто у вас возникают проблемы с запоминанием встреч или обязательств?" },
+      { part: "A", text: "Когда у вас есть задание, требующее серьёзных размышлений, как часто вы избегаете или откладываете начало?" },
+      { part: "A", text: "Как часто вы ёрзаете или вертитесь руками или ногами, когда вам приходится долго сидеть на месте?" },
+      { part: "A", text: "Как часто вы чувствуете себя чрезмерно активным и вынужденным что-то делать, будто вас «заводит мотор»?" },
+      { part: "B", text: "Как часто вы делаете ошибки по невнимательности, когда работаете над скучным или трудным проектом?" },
+      { part: "B", text: "Как часто вам сложно удерживать внимание при выполнении скучной или повторяющейся работы?" },
+      { part: "B", text: "Как часто вам сложно сосредоточиться на том, что говорят люди, даже когда они обращаются непосредственно к вам?" },
+      { part: "B", text: "Как часто вы теряете вещи или с трудом находите их дома или на работе?" },
+      { part: "B", text: "Как часто вас отвлекают активность или шум вокруг?" },
+      { part: "B", text: "Как часто вы встаёте со своего места на совещаниях или в других ситуациях, где ожидается, что вы останетесь сидеть?" },
+      { part: "B", text: "Как часто вы чувствуете беспокойство или нервозность?" },
+      { part: "B", text: "Как часто вам сложно расслабиться и отдохнуть, когда у вас есть время для себя?" },
+      { part: "B", text: "Как часто в обществе вы говорите слишком много?" },
+      { part: "B", text: "Когда вы разговариваете с другими, как часто заканчиваете их предложения, прежде чем они успеют договорить?" },
+      { part: "B", text: "Как часто вам сложно ждать своей очереди в ситуациях, когда это необходимо?" },
+      { part: "B", text: "Как часто вы прерываете других, когда они заняты?" }
+    ];
+
+    // Пороги «затенённой зоны» Part A по бланку ВОЗ (индексы 0–5)
+    const SHADE_MIN = [3, 3, 3, 2, 2, 2];
+
+    const OPTIONS = [
+      { v: 0, t: "0 — никогда" },
+      { v: 1, t: "1 — редко" },
+      { v: 2, t: "2 — иногда" },
+      { v: 3, t: "3 — часто" },
+      { v: 4, t: "4 — очень часто" }
+    ];
+
+    const form = document.getElementById("asrsForm");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+    const liveScore = document.getElementById("liveScore");
+    const submitBtn = document.getElementById("submitBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const formHint = document.getElementById("formHint");
+    const resultBox = document.getElementById("resultBox");
+
+    function render() {
+      let html = "";
+      QUESTIONS.forEach((q, i) => {
+        const n = i + 1;
+        if (n === 7) {
+          html += `<p class="part-label sans">Часть B · дополнительные симптомы</p>
+            <p class="part-hint">Эти вопросы не входят в короткий скрининг, но помогают увидеть картину внимательнее.</p>`;
+        }
+        const opts = OPTIONS.map(o => `
+          <label class="opt">
+            <input type="radio" name="q${n}" value="${o.v}" required>
+            <span>${o.t}</span>
+          </label>`).join("");
+        html += `<div class="q" data-q="${n}">
+          <div class="q-num sans">Вопрос ${n} из 18 · часть ${q.part}</div>
+          <div class="q-text">${q.text}</div>
+          <div class="opts sans">${opts}</div>
+        </div>`;
+      });
+      form.innerHTML = html;
+    }
+
+    function answers() {
+      return QUESTIONS.map((_, i) => {
+        const el = form.querySelector(`input[name="q${i + 1}"]:checked`);
+        return el ? Number(el.value) : null;
+      });
+    }
+
+    function partAHits(vals) {
+      let hits = 0;
+      for (let i = 0; i < 6; i++) {
+        if (vals[i] !== null && vals[i] >= SHADE_MIN[i]) hits++;
+      }
+      return hits;
+    }
+
+    function updateUI() {
+      const vals = answers();
+      const done = vals.filter(v => v !== null).length;
+      const hits = partAHits(vals);
+      progressFill.style.width = `${(done / 18) * 100}%`;
+      progressText.textContent = `Отвечено ${done} из 18`;
+      liveScore.textContent = `Скрининг A: ${hits} / 6`;
+      submitBtn.disabled = done < 18;
+      formHint.textContent = done < 18 ? `Осталось ${18 - done}` : "Можно считать результат";
+      vals.forEach((v, i) => {
+        const card = form.querySelector(`.q[data-q="${i + 1}"]`);
+        if (!card) return;
+        card.classList.toggle("answered", v !== null);
+        card.querySelectorAll(".opt").forEach(lab => {
+          const input = lab.querySelector("input");
+          lab.classList.toggle("selected", !!input && input.checked);
+        });
+      });
+    }
+
+    function showResult() {
+      const vals = answers();
+      if (vals.some(v => v === null)) return;
+      const hits = partAHits(vals);
+      const sumA = vals.slice(0, 6).reduce((a, b) => a + b, 0);
+      const sumB = vals.slice(6).reduce((a, b) => a + b, 0);
+      const sumAll = sumA + sumB;
+
+      let title, desc;
+      if (hits >= 4) {
+        title = "Скрининг: симптомы согласуются с СДВГ у взрослых";
+        desc = "По части A шкалы ASRS 1.1 четыре и более ответа попали в зону внимания ВОЗ. Это не диагноз — это сигнал: имеет смысл спокойно разобраться со специалистом и с опорами, которые реально работают при нейроотличности.";
+      } else if (hits >= 2) {
+        title = "Скрининг: есть заметные признаки";
+        desc = "Часть ответов в зоне внимания. Картина может быть смешанной (тревога, выгорание, особенности внимания). Имеет смысл почитать материалы про СДВГ и при желании обсудить это со специалистом.";
+      } else {
+        title = "Скрининг: ниже порога ASRS";
+        desc = "По короткой части A порог скрининга не набран. Если всё равно узнаёшь себя в «качелях» и «понимаю — не делаю» — опирайся на самочувствие: тест не отменяет твой опыт.";
+      }
+
+      document.getElementById("resultScore").textContent = `${hits} из 6 в зоне скрининга`;
+      document.getElementById("resultLevel").textContent = title;
+      document.getElementById("resultDesc").textContent = desc;
+      document.getElementById("resultMeta").innerHTML =
+        `<strong>Часть A (1–6):</strong> ${sumA} баллов · <strong>Часть B (7–18):</strong> ${sumB} баллов · <strong>Всего:</strong> ${sumAll}<br>` +
+        `По методике ВОЗ решающим для скрининга считается не сумма баллов, а число ответов в «зоне» части A (≥ 4 из 6).`;
+
+      resultBox.classList.add("show");
+      resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    render();
+    form.addEventListener("change", updateUI);
+    submitBtn.addEventListener("click", showResult);
+    resetBtn.addEventListener("click", () => {
+      form.reset();
+      resultBox.classList.remove("show");
+      updateUI();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    updateUI();
+  </script>
+</body>
+</html>

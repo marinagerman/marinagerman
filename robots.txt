@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marinagerman.github.io/marinagerman/sitemap.xml
