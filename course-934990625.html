@@ -425,6 +425,7 @@
     <nav class="footer-links" aria-label="Юридические документы">
       <a href="oferta.html">Публичная оферта</a>
       <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="cookies.html">Политика cookie</a>
       <a href="consent-pd.html">Согласие на обработку ПДн</a>
       <a href="consent-mailing.html">Согласие на рассылку</a>
       <a href="requisites.html">Реквизиты</a>
@@ -441,6 +442,73 @@
       <span class="arrow" aria-hidden="true">→</span>
     </a>
   </div>
+
+
+  <div id="cookie-banner" class="mg-cookie-banner" role="dialog" aria-label="Уведомление о cookie" hidden>
+    <p class="mg-cookie-text">
+      Мы используем cookie для работы сайта и статистики.
+      Продолжая пользоваться сайтом, вы соглашаетесь с
+      <a href="cookies.html">политикой cookie</a>
+      и
+      <a href="privacy.html">политикой конфиденциальности</a>.
+    </p>
+    <button type="button" id="cookie-accept" class="mg-cookie-btn">Понятно</button>
+  </div>
+  <style>
+    .mg-cookie-banner{
+      position:fixed;z-index:90;
+      left:max(.75rem,env(safe-area-inset-left));
+      right:max(.75rem,env(safe-area-inset-right));
+      bottom:max(.75rem,env(safe-area-inset-bottom));
+      max-width:26rem;margin:0 auto;
+      padding:1rem 1.1rem 1.05rem;
+      border-radius:16px;
+      border:1px solid rgba(197,160,112,.4);
+      background:rgba(8,7,6,.96);
+      backdrop-filter:blur(12px);
+      box-shadow:0 12px 40px rgba(0,0,0,.55);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      color:#b8b0a6;
+    }
+    .mg-cookie-banner[hidden]{display:none!important}
+    @media (min-width:720px){
+      .mg-cookie-banner{
+        left:auto;right:max(.9rem,env(safe-area-inset-right));
+        bottom:max(.9rem,env(safe-area-inset-bottom));
+        margin:0;max-width:22rem;
+      }
+    }
+    .mg-cookie-text{margin:0;font-size:.82rem;line-height:1.55}
+    .mg-cookie-text a{color:#e0c08a;text-decoration:underline;text-underline-offset:2px}
+    .mg-cookie-text a:hover{color:#c5a070}
+    .mg-cookie-btn{
+      display:block;width:100%;margin-top:.85rem;
+      border:none;border-radius:999px;cursor:pointer;
+      padding:.7rem 1rem;
+      font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:#111;
+      background:linear-gradient(135deg,#e0c08a,#c5a070,#9a7a4f);
+      box-shadow:0 8px 24px rgba(197,160,112,.28);
+    }
+    .mg-cookie-btn:hover{filter:brightness(1.05)}
+  </style>
+  <script>
+  (function(){
+    var key='mg-cookie-accepted';
+    var banner=document.getElementById('cookie-banner');
+    var btn=document.getElementById('cookie-accept');
+    if(!banner) return;
+    try{
+      if(!localStorage.getItem(key)) banner.hidden=false;
+    }catch(e){ banner.hidden=false; }
+    if(btn){
+      btn.addEventListener('click',function(){
+        try{ localStorage.setItem(key,'1'); }catch(e){}
+        banner.hidden=true;
+      });
+    }
+  })();
+  </script>
 
 </body>
 </html>

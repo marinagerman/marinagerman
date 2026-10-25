@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Политика cookie — Марина Герман</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Марина Герман">
+  <meta property="og:title" content="Политика cookie — Марина Герман">
+  <meta property="og:description" content="Использование cookie на сайте Марины Герман.">
+  <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
+  <meta property="og:url" content="https://marinagerman.github.io/marinagerman/cookies.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Политика cookie — Марина Герман">
+  <meta name="twitter:description" content="Использование cookie на сайте Марины Герман.">
+  <meta name="twitter:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
+  <style>
+    :root {
+      --bg: #050505;
+      --ink: #ffffff;
+      --muted: #b8b0a6;
+      --line: rgba(197, 160, 112, 0.28);
+      --gold: #c5a070;
+      --gold-bright: #e0c08a;
+      --gold-dim: #9a7a4f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    .sans { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 2.5rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner { display: grid; gap: 1.75rem; }
+    .footer-seller p { margin-top: 0.35rem; line-height: 1.55; }
+    .footer-seller strong { color: var(--gold); }
+    .footer-seller a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 2px; }
+    .footer-seller a:hover { color: var(--gold); }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      justify-content: center;
+    }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-bright); }
+    .footer-copy {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      opacity: 0.85;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(197, 160, 112, 0.12);
+    }
+    .legal-doc { padding: 2.5rem 0 3.5rem; max-width: 52rem; }
+    .legal-doc h1 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .legal-meta {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .legal-body { margin-top: 2rem; color: #e8e0d6; font-size: 0.95rem; }
+    .legal-body h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .legal-body p { margin-top: 0.65rem; line-height: 1.65; }
+    .legal-body ul { margin-top: 0.65rem; padding-left: 1.35rem; }
+    .legal-body li { margin-top: 0.4rem; line-height: 1.6; }
+    .legal-body a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-body a:hover { color: var(--gold); }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .back-link:hover { color: var(--gold-bright); }
+    .legal-nav {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(197, 160, 112, 0.18);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.25rem;
+    }
+    .legal-nav a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .legal-nav a:hover { color: var(--gold-bright); }
+    @media (min-width: 640px) {
+      .footer-inner { text-align: center; }
+      .footer-seller { justify-self: center; }
+    }
+    .maker-badge{position:fixed;left:max(.7rem,env(safe-area-inset-left));bottom:max(.7rem,env(safe-area-inset-bottom));z-index:80;max-width:min(92vw,280px)}
+    .maker-badge a{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .75rem .55rem .65rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(8,7,6,.92);backdrop-filter:blur(10px);box-shadow:0 8px 28px rgba(0,0,0,.45);color:#e0c08a;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1.2}
+    .maker-badge a:hover{border-color:#c5a070;color:#fff}
+    .maker-badge .star{color:#e0c08a;font-size:.85rem}
+    .maker-badge .arrow{opacity:.85}
+  </style>
+</head>
+<body>
+  <main class="container legal-doc sans">
+    <a class="back-link" href="index.html">← На главную</a>
+    <h1>Политика использования cookie</h1>
+    <p class="legal-meta">Редакция от 25.10.2026</p>
+    <div class="legal-body">
+      <h2>Что такое cookie</h2>
+      <p>Cookie — небольшие файлы, которые сайт сохраняет в браузере для работы страниц, запоминания согласия и статистики.</p>
+
+      <h2>Какие cookie используем</h2>
+      <ul>
+        <li>Технические — для корректной работы сайта, видеоплееров и баннера согласия.</li>
+        <li>Аналитические — при подключении счётчиков посещаемости (в том числе Яндекс Метрики): посещаемость, удобство страниц, достижение целей.</li>
+      </ul>
+
+      <h2>Как отключить</h2>
+      <p>Вы можете удалить или ограничить cookie в настройках браузера. Часть функций сайта при этом может работать хуже. Отказ от аналитики не мешает связаться по телефону <a href="tel:+79897001701">+7 989 700 17 01</a> или email <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a>.</p>
+
+      <p>Подробнее об обработке данных — <a href="privacy.html">политика конфиденциальности</a>.</p>
+
+      <nav class="legal-nav" aria-label="Другие документы">
+        <a href="oferta.html">Оферта</a>
+        <a href="privacy.html">Конфиденциальность</a>
+        <a href="consent-pd.html">Согласие на ПДн</a>
+        <a href="consent-mailing.html">Согласие на рассылку</a>
+        <a href="requisites.html">Реквизиты</a>
+        <a href="refund.html">Возврат</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer sans">
+  <div class="container footer-inner">
+    <div class="footer-seller">
+      <p><strong>ИП Герман Марина Олеговна</strong></p>
+      <p>Тел.: <a href="tel:+79897001701">+7 989 700 17 01</a></p>
+      <p>Email: <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a></p>
+    </div>
+    <nav class="footer-links" aria-label="Юридические документы">
+      <a href="oferta.html">Публичная оферта</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="cookies.html">Политика cookie</a>
+      <a href="consent-pd.html">Согласие на обработку ПДн</a>
+      <a href="consent-mailing.html">Согласие на рассылку</a>
+      <a href="requisites.html">Реквизиты</a>
+      <a href="refund.html">Возврат и отказ</a>
+    </nav>
+    <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Все права защищены.</p>
+  </div>
+</footer>
+
+  <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
+    <a href="tatiana-zhelikhovskaya.html">
+      <span class="star" aria-hidden="true">★</span>
+      <span>Сайт сделала Татьяна Желиховская</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+
+  <div id="cookie-banner" class="mg-cookie-banner" role="dialog" aria-label="Уведомление о cookie" hidden>
+    <p class="mg-cookie-text">
+      Мы используем cookie для работы сайта и статистики.
+      Продолжая пользоваться сайтом, вы соглашаетесь с
+      <a href="cookies.html">политикой cookie</a>
+      и
+      <a href="privacy.html">политикой конфиденциальности</a>.
+    </p>
+    <button type="button" id="cookie-accept" class="mg-cookie-btn">Понятно</button>
+  </div>
+  <style>
+    .mg-cookie-banner{
+      position:fixed;z-index:90;
+      left:max(.75rem,env(safe-area-inset-left));
+      right:max(.75rem,env(safe-area-inset-right));
+      bottom:max(.75rem,env(safe-area-inset-bottom));
+      max-width:26rem;margin:0 auto;
+      padding:1rem 1.1rem 1.05rem;
+      border-radius:16px;
+      border:1px solid rgba(197,160,112,.4);
+      background:rgba(8,7,6,.96);
+      backdrop-filter:blur(12px);
+      box-shadow:0 12px 40px rgba(0,0,0,.55);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      color:#b8b0a6;
+    }
+    .mg-cookie-banner[hidden]{display:none!important}
+    @media (min-width:720px){
+      .mg-cookie-banner{
+        left:auto;right:max(.9rem,env(safe-area-inset-right));
+        bottom:max(.9rem,env(safe-area-inset-bottom));
+        margin:0;max-width:22rem;
+      }
+    }
+    .mg-cookie-text{margin:0;font-size:.82rem;line-height:1.55}
+    .mg-cookie-text a{color:#e0c08a;text-decoration:underline;text-underline-offset:2px}
+    .mg-cookie-text a:hover{color:#c5a070}
+    .mg-cookie-btn{
+      display:block;width:100%;margin-top:.85rem;
+      border:none;border-radius:999px;cursor:pointer;
+      padding:.7rem 1rem;
+      font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:#111;
+      background:linear-gradient(135deg,#e0c08a,#c5a070,#9a7a4f);
+      box-shadow:0 8px 24px rgba(197,160,112,.28);
+    }
+    .mg-cookie-btn:hover{filter:brightness(1.05)}
+  </style>
+  <script>
+  (function(){
+    var key='mg-cookie-accepted';
+    var banner=document.getElementById('cookie-banner');
+    var btn=document.getElementById('cookie-accept');
+    if(!banner) return;
+    try{
+      if(!localStorage.getItem(key)) banner.hidden=false;
+    }catch(e){ banner.hidden=false; }
+    if(btn){
+      btn.addEventListener('click',function(){
+        try{ localStorage.setItem(key,'1'); }catch(e){}
+        banner.hidden=true;
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
