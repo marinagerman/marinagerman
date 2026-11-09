@@ -56,6 +56,11 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://marinagerman.github.io/marinagerman/kto-takaya-marina-german.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://marinagerman.github.io/marinagerman/otzyvy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
