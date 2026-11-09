@@ -6,16 +6,16 @@
   <title>Я МОГУ! — тренинг навыков для людей с СДВГ | Марина Герман</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="canonical" href="https://marinagerman.github.io/marinagerman/ya-mogu.html">
-  <meta name="description" content="Тренинг навыков для людей с СДВГ «Я МОГУ!»: 12 модулей онлайн, группы 4–8 человек. Организация жизни, время, эмоции, отношения — с Мариной Герман.">
+  <meta name="description" content="Тренинг навыков «Я МОГУ!» для людей с СДВГ: 12 недель, 12 модулей по 90 минут. Предзапись на следующий поток. Марина Герман.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Марина Герман">
   <meta property="og:title" content="Я МОГУ! — тренинг навыков для людей с СДВГ | Марина Герман">
-  <meta property="og:description" content="12 модулей онлайн, маленькие группы. Практические навыки для жизни с СДВГ — без давления «будь нормальной».">
+  <meta property="og:description" content="12 недель · 12 модулей · группа до 8 человек. Текущий поток идёт — открыта предзапись на следующий.">
   <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
   <meta property="og:url" content="https://marinagerman.github.io/marinagerman/ya-mogu.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Я МОГУ! — тренинг навыков для людей с СДВГ | Марина Герман">
-  <meta name="twitter:description" content="12 модулей онлайн, маленькие группы. Практические навыки для жизни с СДВГ.">
+  <meta name="twitter:title" content="Я МОГУ! — тренинг навыков для людей с СДВГ">
+  <meta name="twitter:description" content="12 недель · навыки для жизни с СДВГ. Предзапись на следующий поток.">
   <style>
     :root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
     *{box-sizing:border-box;margin:0;padding:0}
@@ -31,14 +31,16 @@
     .logo-word{display:flex;flex-direction:column;line-height:1.15}
     .logo-word strong{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-bright)}
     .logo-word span{font-size:.6rem;color:var(--muted)}
-    .nav-pages{display:flex;flex-wrap:wrap;gap:.28rem}
-    .nav-pages a{border:1px solid var(--line);border-radius:999px;padding:.32rem .62rem;font-size:.56rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-bright)}
+    .nav-pages{display:flex;flex-wrap:nowrap;align-items:center;gap:.28rem;flex:1 1 auto;justify-content:center;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .nav-pages::-webkit-scrollbar{display:none}
+    .nav-pages a{flex:0 0 auto;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.32rem .62rem;font-size:.56rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-bright)}
     .nav-pages a.active,.nav-pages a:hover{border-color:var(--gold);color:#fff}
-    .top-btn{border-radius:999px;padding:.38rem .75rem;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+    .top-btn{border-radius:999px;padding:.38rem .75rem;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111;white-space:nowrap}
     .hero{padding:2.6rem 0 2rem;border-bottom:1px solid rgba(197,160,112,.16);background:linear-gradient(180deg,#0c0a08,#050505)}
     .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    .badge{display:inline-block;margin-top:.75rem;padding:.35rem .7rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(197,160,112,.12);color:var(--gold-bright);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
     h1{margin-top:.55rem;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.12;letter-spacing:.04em;text-transform:uppercase}
-    .lead{margin-top:.9rem;color:var(--muted);font-size:1.05rem;max-width:38rem}
+    .lead{margin-top:.9rem;color:var(--muted);font-size:1.05rem;max-width:40rem}
     .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.25rem}
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
     .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111;box-shadow:0 8px 28px rgba(197,160,112,.28)}
@@ -47,17 +49,19 @@
     section+section{border-top:1px solid rgba(197,160,112,.12)}
     h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin-bottom:.85rem;color:var(--gold-bright)}
     p{margin-top:.7rem;color:var(--muted)}
-    ul{margin:.85rem 0 0 1.15rem;color:var(--muted)}
+    ul,ol{margin:.85rem 0 0 1.15rem;color:var(--muted)}
     li{margin:.4rem 0}
     .stats{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
-    .stat{min-width:120px;padding:.85rem 1rem;border-radius:14px;border:1px solid rgba(197,160,112,.35);background:linear-gradient(180deg,#141210,#0a0908);text-align:center}
-    .stat b{display:block;color:var(--gold-bright);font-size:1.25rem}
-    .stat span{display:block;margin-top:.3rem;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .stat{min-width:110px;padding:.85rem 1rem;border-radius:14px;border:1px solid rgba(197,160,112,.35);background:linear-gradient(180deg,#141210,#0a0908);text-align:center}
+    .stat b{display:block;color:var(--gold-bright);font-size:1.15rem}
+    .stat span{display:block;margin-top:.3rem;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
     .grid{display:grid;gap:.85rem;grid-template-columns:1fr;margin-top:1rem}
     @media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
     .card{border:1px solid rgba(197,160,112,.25);border-radius:16px;padding:1.15rem 1.2rem;background:linear-gradient(180deg,rgba(28,24,20,.45),rgba(10,9,8,.9))}
     .card h3{color:#fff;font-size:1rem;margin-bottom:.45rem}
     .card p{margin-top:0;font-size:.92rem}
+    .price-box{margin-top:1rem;padding:1.2rem 1.15rem;border-radius:16px;border:1px solid rgba(197,160,112,.3);background:rgba(12,10,8,.85)}
+    .price-box strong{color:var(--gold-bright)}
     .cta{margin-top:1.2rem;padding:1.4rem 1.2rem;border-radius:18px;border:1px solid rgba(197,160,112,.4);background:linear-gradient(135deg,rgba(197,160,112,.16),rgba(12,10,8,.95))}
     .note{font-size:.85rem;color:#8a8278;margin-top:1rem}
     .site-footer{border-top:1px solid rgba(197,160,112,.2);padding:1.5rem 0 2rem;margin-top:1rem}
@@ -79,7 +83,7 @@
     "@context":"https://schema.org",
     "@type":"Course",
     "name":"Я МОГУ! — тренинг навыков для людей с СДВГ",
-    "description":"12 модулей онлайн для развития практических навыков жизни с СДВГ. Группы 4–8 человек.",
+    "description":"12 недель, 12 модулей по 90 минут. Практические навыки жизни с СДВГ. Предзапись на следующий поток.",
     "provider":{"@type":"Person","name":"Марина Герман","url":"https://marinagerman.github.io/marinagerman/"},
     "url":"https://marinagerman.github.io/marinagerman/ya-mogu.html"
   }
@@ -92,71 +96,91 @@
       <span class="logo-word"><strong>Марина Герман</strong><span>Тебе можно легче</span></span>
     </a>
     <nav class="nav-pages sans" aria-label="Разделы сайта">
-      <a href="index.html">Главная</a>
-      <a href="sdvg.html">СДВГ</a>
-      <a class="active" href="ya-mogu.html">Я МОГУ!</a>
-      <a href="test-sdvg.html">Тест</a>
-      <a href="stati.html">Статьи</a>
-      <a href="marina-german.html">Обо мне</a>
-    </nav>
-    <a class="top-btn" href="https://taplink.cc/pogore__lova/p/a361e8/" target="_blank" rel="noopener">Записаться</a>
+        <a href="index.html">Главная</a>
+        <a href="sdvg.html">СДВГ</a>
+        <a class="active" href="ya-mogu.html">Я МОГУ!</a>
+        <a href="podarki.html">Подарки</a>
+        <a href="depressiya.html">Депрессия</a>
+        <a href="tetahiling.html">Тетахилинг</a>
+        <a href="kursy.html">Курсы</a>
+        <a href="marina-german.html">Обо мне</a>
+        <a href="otzyvy.html">Отзывы</a>
+        <a href="stati.html">Статьи</a>
+      </nav>
+    <a class="top-btn" href="https://t.me/marina_germann?text=%D0%9F%D1%80%D0%B5%D0%B4%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D0%BD%D0%B0%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%20%D0%AF%20%D0%9C%D0%9E%D0%93%D0%A3" target="_blank" rel="noopener">Предзапись</a>
   </div></div>
 
   <header class="hero">
     <div class="container">
-      <p class="eyebrow sans">Тренинг навыков · СДВГ · онлайн</p>
+      <p class="eyebrow sans">Тренинг навыков · СДВГ · 12 недель</p>
       <h1 class="sans">Я могу!</h1>
-      <p class="lead">Тренинг навыков для людей с СДВГ. Не учимся быть «нормальными» — учимся жить легче со своим мозгом. Ведёт Марина Герман — психолог с СДВГ, КПТ, инструктор Тетахилинг.</p>
+      <p class="badge sans">Текущий поток уже идёт · открыта предзапись на следующий</p>
+      <p class="lead">Начни управлять своей жизнью. Тренинг навыков для людей с СДВГ — вместе 12 недель. Ведёт Марина Герман: психолог с СДВГ, КПТ, инструктор Тетахилинг.</p>
       <div class="stats sans">
-        <div class="stat"><b>12</b><span>модулей</span></div>
-        <div class="stat"><b>4–8</b><span>человек в группе</span></div>
-        <div class="stat"><b>онлайн</b><span>с записями</span></div>
+        <div class="stat"><b>12</b><span>модулей / недель</span></div>
+        <div class="stat"><b>90 мин</b><span>раз в неделю</span></div>
+        <div class="stat"><b>до 8</b><span>человек в группе</span></div>
+        <div class="stat"><b>онлайн</b><span>очно / онлайн</span></div>
       </div>
       <div class="actions sans">
-        <a class="btn btn-gold" href="https://taplink.cc/pogore__lova/p/a361e8/" target="_blank" rel="noopener">Записаться на тренинг</a>
-        <a class="btn btn-ghost" href="statya-sdvg-zhizn.html">Сначала статья</a>
-        <a class="btn btn-ghost" href="test-sdvg.html">Пройти тест ASRS</a>
+        <a class="btn btn-gold" href="https://t.me/marina_germann?text=%D0%9F%D1%80%D0%B5%D0%B4%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D0%BD%D0%B0%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%20%D0%AF%20%D0%9C%D0%9E%D0%93%D0%A3" target="_blank" rel="noopener">Предзапись на следующий поток</a>
+        <a class="btn btn-ghost" href="#programma">Программа</a>
+        <a class="btn btn-ghost" href="test-sdvg.html">Тест ASRS</a>
       </div>
     </div>
   </header>
 
   <main>
     <section><div class="container">
-      <h2 class="sans">Для кого</h2>
-      <p>Если узнаёшь себя: откладываешь важное, теряешь время и вещи, начинаешь много — заканчиваешь мало, ловишь эмоциональные качели и в конце дня «отключена от розетки» — этот тренинг про тебя.</p>
-      <p>Не нужен официальный диагноз, чтобы начать осваивать навыки. Нужна честность с собой и готовность практиковать маленькими шагами.</p>
+      <h2 class="sans">Чему учимся</h2>
+      <p>12 модулей — каждый про одну ключевую трудность СДВГ. Начни управлять жизнью не через «соберись», а через навыки.</p>
+      <div class="grid sans">
+        <div class="card"><h3>Отдых и сон</h3><p>Регуляция восстановления — чтобы силы возвращались, а не «отдыхала и ещё хуже».</p></div>
+        <div class="card"><h3>Гиперфокус</h3><p>Выходим из «залипания», организуем рабочие процессы так, чтобы легко начать и довести до конца.</p></div>
+        <div class="card"><h3>Навык переключаться</h3><p>Организация рутины так, чтобы были силы и желание продолжать.</p></div>
+        <div class="card"><h3>Эмоциональная регуляция</h3><p>Берём под контроль раздражительность и импульсивность.</p></div>
+        <div class="card"><h3>Память и напоминания</h3><p>Усиление памяти через надёжную систему заметок и внешних опор.</p></div>
+        <div class="card"><h3>Концентрация</h3><p>Убираем помехи и создаём условия для работы.</p></div>
+        <div class="card"><h3>Паралич выбора</h3><p>Выходим из страха ошибиться и застревания на выборе.</p></div>
+        <div class="card"><h3>Временная слепота</h3><p>Контакт со временем через внешнюю память — таймеры, буферы, якоря.</p></div>
+        <div class="card"><h3>Укрощение импульсивности</h3><p>Выбор в пользу приоритетов, а не «сначала сделала — потом подумала».</p></div>
+      </div>
+    </div></section>
+
+    <section id="programma"><div class="container">
+      <h2 class="sans">Формат и программа</h2>
+      <ul>
+        <li><strong style="color:var(--gold-bright)">12 модулей</strong> — каждый фокусируется на одной проблеме СДВГ;</li>
+        <li><strong style="color:var(--gold-bright)">12 сессий</strong>, 1 раз в неделю по <strong style="color:var(--gold-bright)">90 минут</strong>;</li>
+        <li>перерывы каждые 30 минут (по 5–10 минут) или 2 блока по 35–40 минут + перерыв;</li>
+        <li>группа <strong style="color:var(--gold-bright)">до 8 человек</strong> (малые группы, разбор ситуации каждой участницы);</li>
+        <li>форма: очно / онлайн;</li>
+        <li>методы: психообразование, ролевые игры, рабочие листы, обсуждение, домашние задания.</li>
+      </ul>
+      <p>Фокус занятия: один ключевой навык + практика на сессии + домашнее задание. Структура встречи: мини-лекция 15–20 минут → практика в парах / малых группах → обсуждение → формулировка «мой навык недели» и конкретный план применения.</p>
+      <p><strong style="color:#e8e0d6">Отличие от групповой психотерапии:</strong> минимум анализа прошлого, максимум репетиции и закрепления. Работа на поведенческом уровне — стратегии и перенос в реальную жизнь. Цель: к концу тренинга ваша жизнь стала легче.</p>
     </div></section>
 
     <section><div class="container">
-      <h2 class="sans">Чему научишься</h2>
-      <div class="grid sans">
-        <div class="card"><h3>Быт и порядок</h3><p>Организовать день так, чтобы было спокойнее — без войны с собой и вечной уборки «с нуля».</p></div>
-        <div class="card"><h3>Задачи до конца</h3><p>Планировать, начинать, продолжать и завершать — с опорой на то, как реально работает мозг с СДВГ.</p></div>
-        <div class="card"><h3>Время и внимание</h3><p>Меньше суеты и «часа в одном носке». Внешние опоры вместо силы воли.</p></div>
-        <div class="card"><h3>Эмоции и восстановление</h3><p>Замечать перегруз вовремя, выходить из качелей, поддерживать себя без стыда.</p></div>
-        <div class="card"><h3>Отношения</h3><p>Меньше обид из-за забытых сообщений и импульсов — больше понятных договорённостей.</p></div>
-        <div class="card"><h3>Самоподдержка</h3><p>Вместо «я ленивая» — рабочие привычки и инструменты, которые можно повторять.</p></div>
+      <h2 class="sans">Стоимость</h2>
+      <div class="price-box sans">
+        <p style="margin-top:0"><strong>10 000 ₽ в месяц</strong> (≈ 2 000 ₽ за занятие)</p>
+        <ul>
+          <li>оплата 2 частями по 12 000 ₽;</li>
+          <li>помесячно: 10 000 + 10 000 + 4 000 ₽;</li>
+          <li>есть рассрочка.</li>
+        </ul>
+        <p class="note" style="margin-top:.85rem">Точные даты следующего потока и бронь места — по предзаписи в Telegram. Текущий поток уже идёт, в него не записываем.</p>
       </div>
     </div></section>
 
     <section><div class="container">
-      <h2 class="sans">Как проходит</h2>
-      <ul>
-        <li>12 модулей — каждый про один конкретный навык;</li>
-        <li>онлайн, маленькая группа 4–8 человек;</li>
-        <li>практика и разборы, а не лекции «просто соберись»;</li>
-        <li>записи остаются — можно возвращаться в своём темпе.</li>
-      </ul>
-      <p>Ведёт <strong style="color:var(--gold-bright)">Марина Герман</strong>: интегративный психолог, коуч ICF, КПТ для людей с СДВГ, инструктор Тетахилинг. Сама с СДВГ и РАС — знаю тему изнутри.</p>
-    </div></section>
-
-    <section><div class="container">
       <div class="cta">
-        <h2 class="sans">Записаться</h2>
-        <p>Актуальные даты, места и оплата — на странице тренинга. Если вопросы — напиши в Telegram.</p>
+        <h2 class="sans">Предзапись на следующий поток</h2>
+        <p>Напиши «Предзапись на следующий поток Я МОГУ» — сообщу даты, отвечу на вопросы и поставлю в лист ожидания. Мест в группе мало, поэтому лучше записаться заранее.</p>
         <div class="actions sans">
-          <a class="btn btn-gold" href="https://taplink.cc/pogore__lova/p/a361e8/" target="_blank" rel="noopener">Я МОГУ! — записаться</a>
-          <a class="btn btn-ghost" href="https://t.me/marina_germann" target="_blank" rel="noopener">Спросить в Telegram</a>
+          <a class="btn btn-gold" href="https://t.me/marina_germann?text=%D0%9F%D1%80%D0%B5%D0%B4%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D0%BD%D0%B0%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%20%D0%AF%20%D0%9C%D0%9E%D0%93%D0%A3" target="_blank" rel="noopener">Предзапись в Telegram</a>
+          <a class="btn btn-ghost" href="https://taplink.cc/pogore__lova/p/a361e8/" target="_blank" rel="noopener">Страница на Taplink</a>
           <a class="btn btn-ghost" href="sdvg.html">Раздел СДВГ</a>
         </div>
         <p class="note">Не заменяет диагностику и лечение у врача. Это обучение навыкам и психологическая поддержка.</p>
