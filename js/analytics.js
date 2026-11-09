@@ -5,7 +5,7 @@
  */
 (function () {
   var cfg = window.MG_ANALYTICS || {};
-  var METRIKA_ID = cfg.metrikaId || ""; // например "12345678"
+  var METRIKA_ID = cfg.metrikaId || "114149610";
   var GA_ID = cfg.gaId || ""; // например "G-XXXXXXXX"
   var COOKIE_KEY = "mg-cookie-accepted";
 
@@ -33,12 +33,22 @@
       k.async = 1;
       k.src = r;
       a.parentNode.insertBefore(k, a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    })(
+      window,
+      document,
+      "script",
+      "https://mc.yandex.ru/metrika/tag.js?id=" + encodeURIComponent(id),
+      "ym"
+    );
     ym(Number(id), "init", {
+      ssr: true,
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
       webvisor: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
     });
   }
 
