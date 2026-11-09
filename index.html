@@ -26,17 +26,44 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Марина Герман",
-    "alternateName":"Марина Олеговна Герман",
-    "url":"https://marinagerman.github.io/marinagerman/",
-    "jobTitle":"Интегративный психолог, коуч ICF, инструктор Тетахилинг",
-    "description":"Психолог с СДВГ. КПТ для взрослых с СДВГ, Тетахилинг, тренинг навыков «Я МОГУ!».",
-    "sameAs":[
-      "https://t.me/marina_germann",
-      "https://www.instagram.com/marina_germaan/",
-      "https://www.youtube.com/channel/UCzEmJvBy86ILRyJDOLuOiFA",
-      "https://taplink.cc/pogore__lova"
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"https://marinagerman.github.io/marinagerman/#website",
+        "name":"Марина Герман",
+        "url":"https://marinagerman.github.io/marinagerman/",
+        "inLanguage":"ru-RU",
+        "description":"Сайт Марины Герман: СДВГ у взрослых, КПТ, тренинг «Я МОГУ!», Тетахилинг, тесты и курсы.",
+        "publisher":{"@id":"https://marinagerman.github.io/marinagerman/#person"}
+      },
+      {
+        "@type":"Person",
+        "@id":"https://marinagerman.github.io/marinagerman/#person",
+        "name":"Марина Герман",
+        "alternateName":["Марина Олеговна Герман","Marina German"],
+        "url":"https://marinagerman.github.io/marinagerman/",
+        "image":"https://marinagerman.github.io/marinagerman/og-share-square.jpg",
+        "jobTitle":["Интегративный психолог","Коуч ICF","Инструктор Тетахилинг (ThetaHealing)","Расстановщик"],
+        "description":"Марина Герман — интегративный психолог с СДВГ, коуч ICF, инструктор Тетахилинг. Более 7000 часов сессий, 40+ потоков обучения. КПТ и тренинг навыков для взрослых с СДВГ, программа «Я МОГУ!».",
+        "knowsAbout":["СДВГ у взрослых","КПТ при СДВГ","тренинг навыков при СДВГ","Тетахилинг","ThetaHealing","системные расстановки","Access Bars","депрессия и выгорание","нейроотличия"],
+        "hasCredential":[
+          {"@type":"EducationalOccupationalCredential","name":"Психология в социальной сфере","credentialCategory":"certificate","competencyRequired":"450 часов"},
+          {"@type":"EducationalOccupationalCredential","name":"КПТ при СДВГ","credentialCategory":"certificate","competencyRequired":"36 часов"},
+          {"@type":"EducationalOccupationalCredential","name":"Групповой тренинг навыков при СДВГ","credentialCategory":"certificate","competencyRequired":"12 часов"}
+        ],
+        "worksFor":{"@type":"Organization","name":"ИП Герман Марина Олеговна"},
+        "email":"mailto:marinagerman.nails@gmail.com",
+        "telephone":"+79897001701",
+        "sameAs":[
+          "https://t.me/marina_germann",
+          "https://t.me/marina_german_potok_fm",
+          "https://www.instagram.com/marina_germaan/",
+          "https://www.youtube.com/channel/UCzEmJvBy86ILRyJDOLuOiFA",
+          "https://taplink.cc/pogore__lova",
+          "https://marinagerman.github.io/marinagerman/marina-german.html"
+        ],
+        "mainEntityOfPage":"https://marinagerman.github.io/marinagerman/marina-german.html"
+      }
     ]
   }
   </script>
