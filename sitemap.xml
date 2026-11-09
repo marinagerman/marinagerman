@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://marinagerman.github.io/marinagerman/ya-mogu.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://marinagerman.github.io/marinagerman/depressiya.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -84,5 +89,35 @@
     <loc>https://marinagerman.github.io/marinagerman/cookies.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-vremya.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-peregruz.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-otnosheniya.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-rabota.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-zhenschiny.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marinagerman.github.io/marinagerman/statya-sdvg-s-chego-nachat.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
