@@ -40,9 +40,10 @@
 1. [search.google.com/search-console](https://search.google.com/search-console) → префикс URL  
    `https://marinagerman.github.io/marinagerman/`
 2. Подтверждение — meta-тег HTML.
-3. Вставь в `<head>` index:  
-   `<meta name="google-site-verification" content="КОД" />`
-4. Sitemap тот же: `.../sitemap.xml`
+3. Meta уже на главной:  
+   `<meta name="google-site-verification" content="vyUF2cMcydEggNJ689osHT676Ke_8LRRpQK_H25NBkM" />`
+4. После деплоя в GSC нажми «Подтвердить».
+5. Sitemap: `https://marinagerman.github.io/marinagerman/sitemap.xml`
 
 ## 4. Что прислать мне
 
