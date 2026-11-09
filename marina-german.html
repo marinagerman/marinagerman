@@ -82,6 +82,61 @@
     .bio-card p:first-child{margin-top:0}
     .side-card li{margin:.55rem 0 .55rem 1.1rem;color:#e8e0d6}
     .side-card h3{font-size:.95rem;color:var(--gold-bright);margin-bottom:.75rem}
+    .diplomy-note{margin:0 0 1.15rem;color:var(--muted);font-size:.92rem;max-width:40rem}
+    .diplomy-grid{
+      display:grid;gap:1rem;
+      grid-template-columns:1fr;
+    }
+    @media(min-width:640px){.diplomy-grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:980px){.diplomy-grid{grid-template-columns:1fr 1fr 1fr}}
+    .diplom-card{
+      display:flex;flex-direction:column;gap:.85rem;
+      background:linear-gradient(160deg,#161310,#0a0908);
+      border:1px solid rgba(197,160,112,.28);
+      border-radius:18px;padding:.85rem;
+      transition:border-color .2s,transform .2s;
+    }
+    .diplom-card:hover{border-color:rgba(197,160,112,.55);transform:translateY(-2px)}
+    .diplom-card a.diplom-shot{
+      display:block;border-radius:12px;overflow:hidden;
+      border:1px solid rgba(197,160,112,.2);
+      background:#0a0908;aspect-ratio:16/11;
+    }
+    .diplom-card img{
+      width:100%;height:100%;object-fit:cover;object-position:center;
+      display:block;transition:transform .35s ease;
+    }
+    .diplom-card:hover img{transform:scale(1.03)}
+    .diplom-meta{padding:0 .35rem .35rem}
+    .diplom-meta h3{
+      margin:0;font-size:.92rem;line-height:1.35;color:#fff;font-weight:600;
+    }
+    .diplom-meta p{
+      margin:.4rem 0 0;font-size:.78rem;line-height:1.45;color:var(--muted);
+    }
+    .diplom-meta .diplom-hours{
+      display:inline-block;margin-top:.55rem;
+      font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--gold-bright);
+    }
+    .diplom-lightbox{
+      position:fixed;inset:0;z-index:120;display:none;
+      align-items:center;justify-content:center;
+      padding:1rem;background:rgba(0,0,0,.88);
+      backdrop-filter:blur(6px);
+    }
+    .diplom-lightbox.is-open{display:flex}
+    .diplom-lightbox img{
+      max-width:min(1100px,96vw);max-height:90vh;
+      border-radius:10px;border:1px solid rgba(197,160,112,.35);
+      box-shadow:0 20px 60px rgba(0,0,0,.55);
+    }
+    .diplom-lightbox button{
+      position:absolute;top:max(.8rem,env(safe-area-inset-top));
+      right:max(.8rem,env(safe-area-inset-right));
+      width:42px;height:42px;border-radius:999px;border:1px solid rgba(197,160,112,.45);
+      background:rgba(8,7,6,.9);color:#e0c08a;font-size:1.35rem;cursor:pointer;line-height:1;
+    }
     .site-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.85rem;text-align:center}
     .site-footer a{color:var(--gold-bright);text-decoration:underline}
     @media(max-width:700px){
@@ -565,19 +620,56 @@
         <div class="bio-card sans">
           <p>Я — сертифицированный <strong>инструктор Тетахилинг (ThetaHealing)</strong>. Веду базовые, продвинутые и глубинные потоки — уже <strong>40+ потоков</strong>.</p>
           <p>Также работаю как <strong>расстановщик</strong>, практик <strong>Метода легализации правды</strong>, практик <strong>Access Bars</strong> и <strong>таролог</strong>. За плечами — <strong>более 7000 часов</strong> личных сессий.</p>
-          <p>Продолжаю учиться сама и честно пишу в канале про нейроотличия (СДВГ) — из живого опыта, без тумана.</p>
+          <p>Дополнительно — обучение по <strong>психологии</strong> и курсы по <strong>СДВГ</strong> (КПТ и тренинг навыков). Продолжаю учиться сама и честно пишу в канале про нейроотличия — из живого опыта, без тумана.</p>
         </div>
         <aside class="side-card sans">
           <h3>Направления</h3>
           <ul>
             <li>Инструктор Тетахилинг — 40+ потоков</li>
             <li>Практика — 7000+ часов сессий</li>
+            <li>Психология в социальной сфере — 450 ч.</li>
+            <li>КПТ при СДВГ · тренинг навыков при СДВГ</li>
             <li>Системные / семейные расстановки</li>
-            <li>Метод легализации правды</li>
-            <li>Access Bars</li>
-            <li>Таро — практики и марафоны</li>
+            <li>Метод легализации правды · Access Bars · Таро</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section class="block" id="diplomy">
+      <h2 class="sans">Дипломы и сертификаты</h2>
+      <p class="diplomy-note sans">Документы об обучении. Нажмите на фото, чтобы открыть крупнее. Раздел будем дополнять.</p>
+      <div class="diplomy-grid sans">
+        <article class="diplom-card">
+          <a class="diplom-shot" href="diplomy/psihologiya-soc-sfera-450.jpg" data-diplom-open title="Открыть сертификат">
+            <img src="diplomy/psihologiya-soc-sfera-450.jpg" alt="Сертификат: Психология в социальной сфере, 450 часов — Марина Герман" width="1024" height="693" loading="lazy">
+          </a>
+          <div class="diplom-meta">
+            <h3>Психология в социальной сфере</h3>
+            <p>ООО «Онлайн институт Смарт» · аттестация</p>
+            <span class="diplom-hours">450 часов · ноябрь 2026</span>
+          </div>
+        </article>
+        <article class="diplom-card">
+          <a class="diplom-shot" href="diplomy/kpt-sdvg-36.jpg" data-diplom-open title="Открыть сертификат">
+            <img src="diplomy/kpt-sdvg-36.jpg" alt="Сертификат: КПТ при СДВГ, 36 часов — Марина Герман" width="1024" height="724" loading="lazy">
+          </a>
+          <div class="diplom-meta">
+            <h3>КПТ при СДВГ</h3>
+            <p>Международная академия научной психологии · автор курса Карпова М.Л.</p>
+            <span class="diplom-hours">36 часов · октябрь 2026</span>
+          </div>
+        </article>
+        <article class="diplom-card">
+          <a class="diplom-shot" href="diplomy/trening-navykov-sdvg-12.jpg" data-diplom-open title="Открыть сертификат">
+            <img src="diplomy/trening-navykov-sdvg-12.jpg" alt="Сертификат: Групповой тренинг навыков при СДВГ, 12 часов — Марина Герман" width="1024" height="724" loading="lazy">
+          </a>
+          <div class="diplom-meta">
+            <h3>Групповой тренинг навыков при СДВГ</h3>
+            <p>Международная академия научной психологии · автор курса Карпова М.Л.</p>
+            <span class="diplom-hours">12 часов · октябрь 2026</span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -685,6 +777,39 @@
         banner.hidden=true;
       });
     }
+  })();
+  </script>
+
+  <div class="diplom-lightbox" id="diplom-lightbox" aria-modal="true" role="dialog" aria-label="Просмотр диплома">
+    <button type="button" id="diplom-lightbox-close" aria-label="Закрыть">×</button>
+    <img id="diplom-lightbox-img" src="" alt="">
+  </div>
+  <script>
+  (function(){
+    var box=document.getElementById('diplom-lightbox');
+    var img=document.getElementById('diplom-lightbox-img');
+    var closeBtn=document.getElementById('diplom-lightbox-close');
+    if(!box||!img) return;
+    function openDiplom(src,alt){
+      img.src=src; img.alt=alt||'';
+      box.classList.add('is-open');
+      document.body.style.overflow='hidden';
+    }
+    function closeDiplom(){
+      box.classList.remove('is-open');
+      img.removeAttribute('src');
+      document.body.style.overflow='';
+    }
+    document.querySelectorAll('[data-diplom-open]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        var pic=a.querySelector('img');
+        openDiplom(a.getAttribute('href'), pic?pic.alt:'');
+      });
+    });
+    closeBtn&&closeBtn.addEventListener('click',closeDiplom);
+    box.addEventListener('click',function(e){ if(e.target===box) closeDiplom(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDiplom(); });
   })();
   </script>
 
