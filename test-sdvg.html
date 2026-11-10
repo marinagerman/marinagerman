@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Симптомы СДВГ для самодиагностики | Марина Герман</title>
+  <title>Тест на СДВГ — симптомы для самодиагностики | Марина Герман</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="canonical" href="https://marinagerman.github.io/marinagerman/test-sdvg.html">
-  <meta name="description" content="Чек-лист симптомов СДВГ: 9 пунктов невнимательности и 9 — гиперактивности/импульсивности. Считаете галочки — сколько из 9 в каждой части. От Марины Герман.">
+  <meta name="description" content="Тест на СДВГ на сайте Марины Герман: 18 симптомов, две части по 9. Отвечаете да/нет — в итоге сколько симптомов из 9 в каждой части. Ориентир, не диагноз.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Марина Герман">
-  <meta property="og:title" content="Симптомы СДВГ для самодиагностики">
-  <meta property="og:description" content="Две части по 9 симптомов. Отметьте галочки — увидите сколько из 9 в первой и во второй части.">
+  <meta property="og:title" content="Тест на СДВГ — симптомы для самодиагностики">
+  <meta property="og:description" content="18 вопросов. Две части по 9 симптомов. Результат: сколько из 9 в невнимательности и сколько из 9 в гиперактивности.">
   <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
   <meta property="og:url" content="https://marinagerman.github.io/marinagerman/test-sdvg.html">
   <style>
@@ -43,50 +43,50 @@
     .intro p+p{margin-top:.7rem}
     .warn{margin-top:1rem;padding:1rem 1.05rem;border-radius:14px;border:1px solid rgba(197,160,112,.35);background:rgba(197,160,112,.1);color:#e8e0d6;font-size:.92rem}
     .warn strong{color:var(--gold-bright)}
-    .src{margin-top:.85rem;font-size:.82rem;color:#8a8278}
-    .src a{color:var(--gold-bright);text-decoration:underline}
 
-    .live{position:sticky;top:4.4rem;z-index:40;background:rgba(5,5,5,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(197,160,112,.14);padding:.7rem 0}
-    .live-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
-    .live-card{padding:.7rem .85rem;border-radius:12px;border:1px solid rgba(197,160,112,.28);background:rgba(14,12,10,.9)}
-    .live-card span{display:block;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-    .live-card b{display:block;margin-top:.2rem;font-size:1.25rem;color:var(--gold-bright)}
+    .progress-wrap{position:sticky;top:4.4rem;z-index:40;background:rgba(5,5,5,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(197,160,112,.14);padding:.55rem 0}
+    .progress-bar{height:6px;border-radius:999px;background:rgba(197,160,112,.15);overflow:hidden}
+    .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dim),var(--gold-bright));transition:width .25s ease}
+    .progress-meta{display:flex;justify-content:space-between;gap:.5rem;margin-top:.35rem;font-size:.72rem;color:var(--muted);flex-wrap:wrap}
 
-    .part{padding:1.6rem 0 0}
-    .part h2{font-size:clamp(1.15rem,2.5vw,1.4rem);color:var(--gold-bright);margin-bottom:.35rem}
-    .part .part-lead{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
-
-    .item{
-      display:flex;gap:.75rem;align-items:flex-start;cursor:pointer;
-      margin:.55rem 0;padding:.9rem .95rem;border-radius:14px;
-      border:1px solid rgba(197,160,112,.22);background:linear-gradient(180deg,rgba(28,24,20,.45),rgba(10,9,8,.85));
-      transition:border-color .15s, background .15s;
+    .screen{padding:1.5rem 0 2rem}
+    .screen.hidden{display:none}
+    .start-card,.q-card,.result-card{
+      padding:1.25rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.28);
+      background:linear-gradient(180deg,rgba(28,24,20,.5),rgba(10,9,8,.92));
     }
-    .item:hover{border-color:rgba(197,160,112,.5)}
-    .item.on{border-color:var(--gold);background:rgba(197,160,112,.12)}
-    .item input{margin-top:.2rem;accent-color:var(--gold);width:1.15rem;height:1.15rem;flex:0 0 auto}
-    .item .n{flex:0 0 auto;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--gold);min-width:1.4rem}
-    .item .t{color:#e8e0d6;font-size:.95rem}
-
-    .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.5rem 0 1rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:999px;padding:.75rem 1.25rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .part-tag{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+    .q-num{margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+    .q-text{margin-top:.7rem;font-size:clamp(1.05rem,2.8vw,1.25rem);line-height:1.4}
+    .opts{display:grid;gap:.55rem;margin-top:1.2rem}
+    .opt{
+      display:flex;align-items:center;justify-content:center;gap:.5rem;cursor:pointer;
+      border:1px solid rgba(197,160,112,.28);border-radius:999px;padding:.85rem 1rem;
+      background:rgba(0,0,0,.28);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem;
+      color:var(--gold-bright);transition:border-color .15s, background .15s, color .15s;
+    }
+    .opt:hover{border-color:var(--gold);color:#fff}
+    .opt.yes:hover,.opt.yes.picked{background:rgba(197,160,112,.18);border-color:var(--gold);color:#fff}
+    .opt.no:hover,.opt.no.picked{border-color:rgba(180,160,140,.55);color:#fff}
+    .nav-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.1rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+      border-radius:999px;padding:.75rem 1.25rem;font-size:.78rem;font-weight:700;
+      letter-spacing:.05em;text-transform:uppercase;
+    }
     .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
     .btn-ghost{border:1px solid rgba(197,160,112,.4);color:var(--gold-bright);background:transparent}
+    .btn:disabled{opacity:.4;cursor:not-allowed}
 
-    .result{display:none;margin:0 0 2rem;padding:1.3rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.35);background:linear-gradient(160deg,rgba(197,160,112,.14),rgba(12,10,8,.92))}
-    .result.show{display:block}
-    .result h2{font-size:1.2rem;margin-bottom:.85rem}
-    .scores{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .scores{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1rem}
     .score{padding:1rem;border-radius:14px;border:1px solid rgba(197,160,112,.28);background:rgba(0,0,0,.25);text-align:center}
-    .score b{display:block;font-size:clamp(1.8rem,5vw,2.4rem);color:var(--gold-bright);line-height:1}
-    .score span{display:block;margin-top:.4rem;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-    .result .desc{margin-top:1rem;color:var(--muted);font-size:.95rem}
-    .result .desc strong{color:var(--gold-bright)}
+    .score b{display:block;font-size:clamp(1.8rem,5vw,2.5rem);color:var(--gold-bright);line-height:1}
+    .score span{display:block;margin-top:.4rem;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .desc{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .desc strong{color:var(--gold-bright)}
     .note{margin-top:1rem;font-size:.82rem;color:#8a8278}
-
-    .cta{margin:1.4rem 0 2.2rem;padding:1.35rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.4);background:linear-gradient(135deg,rgba(197,160,112,.18),rgba(12,10,8,.95))}
-    .cta h2{font-size:1.25rem;margin-bottom:.35rem}
-    .cta p{color:var(--muted);margin-top:.55rem}
+    .cta{margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid rgba(197,160,112,.2)}
+    .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
 
     .site-footer{border-top:1px solid rgba(197,160,112,.2);padding:1.5rem 0 2rem}
     .footer-seller p{margin-top:.3rem;color:var(--muted);font-size:.88rem}
@@ -95,8 +95,8 @@
     .footer-links a{color:var(--muted);font-size:.78rem}
     .footer-copy{margin-top:1rem;color:#6f675f;font-size:.75rem}
     .maker-badge{position:fixed;left:max(.7rem,env(safe-area-inset-left));bottom:max(.7rem,env(safe-area-inset-bottom));z-index:80;max-width:min(92vw,280px)}
-    .maker-badge a{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .75rem .55rem .65rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(8,7,6,.92);color:#e0c08a;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-    @media(max-width:720px){.logo-word{display:none}.live-grid,.scores{grid-template-columns:1fr}}
+    .maker-badge a{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .75rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(8,7,6,.92);color:#e0c08a;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    @media(max-width:720px){.logo-word{display:none}.scores{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -107,7 +107,7 @@
     </a>
     <nav class="nav-pages sans" aria-label="Разделы">
       <a href="index.html">Главная</a>
-      <a href="sdvg.html">СДВГ</a>
+      <a class="active" href="sdvg.html">СДВГ</a>
       <a href="ya-mogu.html">Я МОГУ!</a>
       <a href="podarki.html">Подарки</a>
       <a href="depressiya.html">Депрессия</a>
@@ -121,59 +121,74 @@
   </div></div>
 
   <header class="hero"><div class="container">
-    <p class="eyebrow sans">СДВГ · чек-лист · самодиагностика</p>
-    <h1 class="sans">Симптомы СДВГ для самодиагностики</h1>
-    <p class="sub">Две части по 9 симптомов — отмечаете галочки</p>
-    <div class="intro">
-      <p>Это ориентир, не медицинский диагноз. Во взрослом возрасте вы могли научиться «вести себя прилично» (например, не перебивать) — но внутри всё равно каждый раз хочется. Тогда галочку ставьте всё равно.</p>
-    </div>
-    <div class="warn sans"><strong>Как считать:</strong> в конце увидите, сколько симптомов из 9 в части «Невнимательность» и сколько из 9 в части «Гиперактивность и импульсивность».</div>
-    <p class="src sans">По чек-листу из канала: <a href="https://t.me/marina_german_potok_fm/7668" target="_blank" rel="noopener">t.me/marina_german_potok_fm/7668</a></p>
+    <p class="eyebrow sans">СДВГ · тест · самодиагностика</p>
+    <h1 class="sans">Тест: симптомы СДВГ</h1>
+    <p class="sub">18 вопросов · две части по 9 · результат сразу на сайте</p>
   </div></header>
 
-  <div class="live sans"><div class="container live-grid">
-    <div class="live-card"><span>Часть 1 · невнимательность</span><b id="live1">0 из 9</b></div>
-    <div class="live-card"><span>Часть 2 · гиперактивность</span><b id="live2">0 из 9</b></div>
-  </div></div>
+  <div class="progress-wrap sans" id="progressWrap" hidden>
+    <div class="container">
+      <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-meta">
+        <span id="progressLabel">Вопрос 1 из 18</span>
+        <span id="progressParts">Часть 1 · невнимательность</span>
+      </div>
+    </div>
+  </div>
 
   <main class="container">
-    <section class="part" aria-labelledby="p1">
-      <h2 class="sans" id="p1">Часть 1. Невнимательность</h2>
-      <p class="part-lead">Отметьте то, что узнаёте в себе.</p>
-      <div id="part1" class="sans"></div>
+    <section class="screen" id="startScreen">
+      <div class="start-card">
+        <div class="intro">
+          <p>Это полноценный тест на сайте: отвечаете «да» или «нет» на каждый симптом. В конце увидите, <strong style="color:var(--gold-bright)">сколько симптомов из 9</strong> в части «Невнимательность» и <strong style="color:var(--gold-bright)">сколько из 9</strong> в части «Гиперактивность и импульсивность».</p>
+          <p>Ориентир для самонаблюдения, не медицинский диагноз.</p>
+        </div>
+        <div class="warn sans" style="margin-top:1rem">
+          <strong>Важно.</strong> Во взрослом возрасте вы могли научиться «вести себя прилично» (например, не перебивать) — но внутри всё равно каждый раз хочется. Тогда отвечайте «да».
+        </div>
+        <div class="actions sans" style="margin-top:1.2rem">
+          <button type="button" class="btn btn-gold" id="startBtn">Начать тест</button>
+          <a class="btn btn-ghost" href="ya-mogu.html">Тренинг «Я МОГУ!»</a>
+        </div>
+      </div>
     </section>
 
-    <section class="part" aria-labelledby="p2">
-      <h2 class="sans" id="p2">Часть 2. Гиперактивность и импульсивность</h2>
-      <p class="part-lead">У взрослых гиперактивность часто уходит во внутреннее беспокойство.</p>
-      <div id="part2" class="sans"></div>
+    <section class="screen hidden" id="quizScreen">
+      <div class="q-card">
+        <p class="part-tag sans" id="partTag">Часть 1 · невнимательность</p>
+        <p class="q-num sans" id="qNum">Вопрос 1 из 18</p>
+        <p class="q-text" id="qText"></p>
+        <div class="opts sans">
+          <button type="button" class="opt yes" id="btnYes" data-val="1">Да — узнаю в себе</button>
+          <button type="button" class="opt no" id="btnNo" data-val="0">Нет</button>
+        </div>
+        <div class="nav-row sans">
+          <button type="button" class="btn btn-ghost" id="btnBack" disabled>Назад</button>
+        </div>
+      </div>
     </section>
 
-    <div class="actions sans">
-      <button type="button" class="btn btn-gold" id="showResult">Показать результат</button>
-      <button type="button" class="btn btn-ghost" id="resetAll">Сбросить</button>
-      <a class="btn btn-ghost" href="ya-mogu.html">Тренинг «Я МОГУ!»</a>
-    </div>
-
-    <div class="result sans" id="result" aria-live="polite">
-      <h2>Ваш результат</h2>
-      <div class="scores">
-        <div class="score"><b id="out1">0 / 9</b><span>часть 1 · невнимательность</span></div>
-        <div class="score"><b id="out2">0 / 9</b><span>часть 2 · гиперактивность</span></div>
+    <section class="screen hidden" id="resultScreen">
+      <div class="result-card sans">
+        <p class="part-tag">Результат теста</p>
+        <h2 style="margin-top:.4rem;font-size:clamp(1.3rem,3vw,1.7rem)">Сколько симптомов насчитали</h2>
+        <div class="scores">
+          <div class="score"><b id="out1">0 / 9</b><span>часть 1 · невнимательность</span></div>
+          <div class="score"><b id="out2">0 / 9</b><span>часть 2 · гиперактивность</span></div>
+        </div>
+        <p class="desc" id="outDesc"></p>
+        <p class="note">При СДВГ необязательно все 18 симптомов. Ориентир: если в первой части около 4–5 и больше, а во второй — от 2–5 и больше, вероятность высокая. Окончательное заключение даёт специалист.</p>
+        <div class="cta">
+          <p style="color:var(--muted)">Дальше можно взять навыки на тренинге «Я МОГУ!» или написать Марине.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-ghost" id="restartBtn">Пройти ещё раз</button>
+            <a class="btn btn-gold" href="ya-mogu.html">Я МОГУ!</a>
+            <a class="btn btn-ghost" href="sdvg.html">Раздел СДВГ</a>
+            <a class="btn btn-ghost" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
+          </div>
+        </div>
       </div>
-      <p class="desc" id="outDesc"></p>
-      <p class="note">При СДВГ необязательно все 18 симптомов. Ориентир из поста: если в первой части около 4–5 и больше, а во второй — от 2–5 и больше, вероятность высокая. Окончательное заключение даёт специалист. Это не автотест «диагноз по кнопке» — это честный подсчёт галочек.</p>
-    </div>
-
-    <div class="cta sans">
-      <h2>Хотите навыки, а не только галочки</h2>
-      <p>Тренинг «Я МОГУ!» — 12 недель практики для взрослых с СДВГ. Или напишите Марине в Telegram.</p>
-      <div class="actions">
-        <a class="btn btn-gold" href="ya-mogu.html">Я МОГУ!</a>
-        <a class="btn btn-ghost" href="sdvg.html">Раздел СДВГ</a>
-        <a class="btn btn-ghost" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer sans"><div class="container">
@@ -188,93 +203,126 @@
       <a href="cookies.html">Cookie</a>
       <a href="requisites.html">Реквизиты</a>
     </nav>
-    <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Чек-лист — ориентир для самонаблюдения, не замена диагностики.</p>
+    <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Тест — ориентир для самонаблюдения, не замена диагностики.</p>
   </div></footer>
 
-  <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
-    <a href="tatiana-zhelikhovskaya.html"><span>★</span><span>Сайт сделала Татьяна Желиховская</span><span>→</span></a>
-  </div>
+  <div class="maker-badge"><a href="tatiana-zhelikhovskaya.html"><span>★</span><span>Сайт сделала Татьяна Желиховская</span><span>→</span></a></div>
 
   <script>
-    var part1 = [
-      "Тебе сложно концентрироваться на деталях, делаешь ошибки из-за невнимательности.",
-      "Тебе сложно долго удерживать внимание во время игр, решения задачи, чтения книги — внимание улетает.",
-      "Иногда людям кажется, что ты не слышишь обращённую к тебе речь.",
-      "Ты неспособна до конца следовать инструкциям и завершать работу, бросаешь на середине.",
-      "Тебе сложно начать что-то делать, распределить время, организовать процесс, придерживаться заданного порядка.",
-      "Избегание или неприязнь к делам, требующим долгих умственных усилий (если кажется, что сложно — избегаю).",
-      "Часто теряешь или забываешь нужные вещи (ключи, документы, телефон).",
-      "Ты быстро отвлекаешься на посторонние стимулы или мысли, вылетаешь из процесса.",
-      "Ты забывчива в повседневных делах и рутине."
-    ];
-    var part2 = [
-      "Ты ерзаешь на месте, бывают суетливые движения руками или ногами.",
-      "Тебе часто хочется встать, походить, когда нужно сидеть.",
-      "У детей — бег или лазание в неподходящих ситуациях; у взрослых, которые научились внешне сдерживаться, гиперактивность уходит во внутреннее беспокойство.",
-      "Неспособность тихо проводить досуг у детей; у взрослых чаще — скучно делать рутину: чтобы помыть посуду, надо включить фильм или вебинар; несколько дел одновременно.",
-      "Постоянное нахождение в движении, ощущение работы «будто от моторчика». Сюда же суета, пока не останешься без сил. Сложно расслабиться.",
-      "Избыточная разговорчивость: иногда физически сложно промолчать; если интересно — хочется говорить даже когда собеседнику не очень.",
-      "Привычка отвечать на вопрос до того, как человек договорил. В детстве — выкрикивание ответов с места.",
-      "Трудности с ожиданием своей очереди; вообще тяжело, если надо ждать. Часто слушают информацию на ×2.",
-      "Склонность перебивать, влезать в чужие разговоры или игры: человек только начал — а кажется, что уже понятно, что он скажет."
+    var questions = [
+      { part: 1, text: "Тебе сложно концентрироваться на деталях, делаешь ошибки из-за невнимательности." },
+      { part: 1, text: "Тебе сложно долго удерживать внимание во время игр, решения задачи, чтения книги — внимание улетает." },
+      { part: 1, text: "Иногда людям кажется, что ты не слышишь обращённую к тебе речь." },
+      { part: 1, text: "Ты неспособна до конца следовать инструкциям и завершать работу, бросаешь на середине." },
+      { part: 1, text: "Тебе сложно начать что-то делать, распределить время, организовать процесс, придерживаться заданного порядка." },
+      { part: 1, text: "Избегание или неприязнь к делам, требующим долгих умственных усилий (если кажется, что сложно — избегаю)." },
+      { part: 1, text: "Часто теряешь или забываешь нужные вещи (ключи, документы, телефон)." },
+      { part: 1, text: "Ты быстро отвлекаешься на посторонние стимулы или мысли, вылетаешь из процесса." },
+      { part: 1, text: "Ты забывчива в повседневных делах и рутине." },
+      { part: 2, text: "Ты ерзаешь на месте, бывают суетливые движения руками или ногами." },
+      { part: 2, text: "Тебе часто хочется встать, походить, когда нужно сидеть." },
+      { part: 2, text: "У детей — бег или лазание в неподходящих ситуациях; у взрослых, которые научились внешне сдерживаться, гиперактивность уходит во внутреннее беспокойство." },
+      { part: 2, text: "Неспособность тихо проводить досуг у детей; у взрослых чаще — скучно делать рутину: чтобы помыть посуду, надо включить фильм или вебинар; несколько дел одновременно." },
+      { part: 2, text: "Постоянное нахождение в движении, ощущение работы «будто от моторчика». Сюда же суета, пока не останешься без сил. Сложно расслабиться." },
+      { part: 2, text: "Избыточная разговорчивость: иногда физически сложно промолчать; если интересно — хочется говорить даже когда собеседнику не очень." },
+      { part: 2, text: "Привычка отвечать на вопрос до того, как человек договорил. В детстве — выкрикивание ответов с места." },
+      { part: 2, text: "Трудности с ожиданием своей очереди; вообще тяжело, если надо ждать. Часто слушают информацию на ×2." },
+      { part: 2, text: "Склонность перебивать, влезать в чужие разговоры или игры: человек только начал — а кажется, что уже понятно, что он скажет." }
     ];
 
-    function render(list, mountId, prefix) {
-      var box = document.getElementById(mountId);
-      box.innerHTML = list.map(function (text, i) {
-        var id = prefix + "-" + (i + 1);
-        return '<label class="item" for="' + id + '">' +
-          '<input type="checkbox" id="' + id + '" data-part="' + prefix + '">' +
-          '<span class="n">' + (i + 1) + '</span>' +
-          '<span class="t">' + text + '</span></label>';
-      }).join("");
+    var answers = new Array(questions.length).fill(null);
+    var idx = 0;
+
+    var startScreen = document.getElementById("startScreen");
+    var quizScreen = document.getElementById("quizScreen");
+    var resultScreen = document.getElementById("resultScreen");
+    var progressWrap = document.getElementById("progressWrap");
+
+    function partTitle(p) {
+      return p === 1 ? "Часть 1 · невнимательность" : "Часть 2 · гиперактивность и импульсивность";
     }
 
-    function count(prefix) {
-      return document.querySelectorAll('input[data-part="' + prefix + '"]:checked').length;
+    function show(el) {
+      [startScreen, quizScreen, resultScreen].forEach(function (s) { s.classList.add("hidden"); });
+      el.classList.remove("hidden");
     }
 
-    function refresh() {
-      var c1 = count("p1");
-      var c2 = count("p2");
-      document.getElementById("live1").textContent = c1 + " из 9";
-      document.getElementById("live2").textContent = c2 + " из 9";
-      document.querySelectorAll(".item").forEach(function (el) {
-        var inp = el.querySelector("input");
-        el.classList.toggle("on", !!(inp && inp.checked));
+    function renderQuestion() {
+      var q = questions[idx];
+      document.getElementById("partTag").textContent = partTitle(q.part);
+      document.getElementById("qNum").textContent = "Вопрос " + (idx + 1) + " из " + questions.length;
+      document.getElementById("qText").textContent = q.text;
+      document.getElementById("progressLabel").textContent = "Вопрос " + (idx + 1) + " из " + questions.length;
+      document.getElementById("progressParts").textContent = partTitle(q.part);
+      document.getElementById("progressFill").style.width = ((idx / questions.length) * 100) + "%";
+      document.getElementById("btnBack").disabled = idx === 0;
+      document.getElementById("btnYes").classList.toggle("picked", answers[idx] === 1);
+      document.getElementById("btnNo").classList.toggle("picked", answers[idx] === 0);
+    }
+
+    function scoreParts() {
+      var c1 = 0, c2 = 0;
+      answers.forEach(function (a, i) {
+        if (a === 1) {
+          if (questions[i].part === 1) c1++;
+          else c2++;
+        }
       });
+      return { c1: c1, c2: c2 };
     }
 
-    function showResult() {
-      var c1 = count("p1");
-      var c2 = count("p2");
-      document.getElementById("out1").textContent = c1 + " / 9";
-      document.getElementById("out2").textContent = c2 + " / 9";
-      var desc = "Часть 1 (невнимательность): <strong>" + c1 + " из 9</strong>. Часть 2 (гиперактивность и импульсивность): <strong>" + c2 + " из 9</strong>.";
-      if (c1 >= 4 && c2 >= 2) {
-        desc += " По ориентиру из поста Марины это зона высокой вероятности — имеет смысл спокойно разобраться со специалистом и с опорами, которые реально работают.";
-      } else if (c1 + c2 === 0) {
-        desc += " Пока ни одной галочки. Можно пройти ещё раз внимательнее — с учётом «внутри хочется», даже если снаружи уже научились сдерживаться.";
+    function finish() {
+      var s = scoreParts();
+      document.getElementById("out1").textContent = s.c1 + " / 9";
+      document.getElementById("out2").textContent = s.c2 + " / 9";
+      document.getElementById("progressFill").style.width = "100%";
+      document.getElementById("progressLabel").textContent = "Готово · 18 из 18";
+      document.getElementById("progressParts").textContent = "Результат";
+      var desc = "Часть 1 (невнимательность): <strong>" + s.c1 + " из 9</strong>. Часть 2 (гиперактивность и импульсивность): <strong>" + s.c2 + " из 9</strong>.";
+      if (s.c1 >= 4 && s.c2 >= 2) {
+        desc += " По ориентиру это зона высокой вероятности — имеет смысл спокойно разобраться со специалистом и с опорами, которые реально работают.";
+      } else if (s.c1 + s.c2 === 0) {
+        desc += " Ни одного «да». Если жизнь всё равно тяжёлая — можно пройти ещё раз внимательнее или зайти в раздел СДВГ.";
       } else {
-        desc += " Набрали меньше порога из поста — это тоже информация. Если жизнь всё равно тяжёлая, можно разобрать опоры в разделе СДВГ или на тренинге «Я МОГУ!».";
+        desc += " Набрали меньше порога ориентира — это тоже информация. Если повседневность всё равно выматывает, посмотрите раздел СДВГ или тренинг «Я МОГУ!».";
       }
       document.getElementById("outDesc").innerHTML = desc;
-      document.getElementById("result").classList.add("show");
-      document.getElementById("result").scrollIntoView({ behavior: "smooth", block: "start" });
+      show(resultScreen);
+      resultScreen.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
-    render(part1, "part1", "p1");
-    render(part2, "part2", "p2");
-    document.addEventListener("change", function (e) {
-      if (e.target && e.target.matches('input[type="checkbox"][data-part]')) refresh();
+    function answer(val) {
+      answers[idx] = val;
+      if (idx >= questions.length - 1) finish();
+      else {
+        idx++;
+        renderQuestion();
+      }
+    }
+
+    document.getElementById("startBtn").addEventListener("click", function () {
+      idx = 0;
+      answers = new Array(questions.length).fill(null);
+      progressWrap.hidden = false;
+      show(quizScreen);
+      renderQuestion();
+      quizScreen.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-    document.getElementById("showResult").addEventListener("click", showResult);
-    document.getElementById("resetAll").addEventListener("click", function () {
-      document.querySelectorAll('input[type="checkbox"][data-part]').forEach(function (el) { el.checked = false; });
-      document.getElementById("result").classList.remove("show");
-      refresh();
+    document.getElementById("btnYes").addEventListener("click", function () { answer(1); });
+    document.getElementById("btnNo").addEventListener("click", function () { answer(0); });
+    document.getElementById("btnBack").addEventListener("click", function () {
+      if (idx === 0) return;
+      idx--;
+      renderQuestion();
     });
-    refresh();
+    document.getElementById("restartBtn").addEventListener("click", function () {
+      idx = 0;
+      answers = new Array(questions.length).fill(null);
+      progressWrap.hidden = false;
+      show(quizScreen);
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
   <script src="js/analytics.js" defer></script>
 </body>
