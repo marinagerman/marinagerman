@@ -31,11 +31,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marinagerman.github.io/marinagerman/test-sdvg.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://marinagerman.github.io/marinagerman/podarki.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
