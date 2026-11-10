@@ -2,14 +2,280 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=sdvg.html">
-  <link rel="canonical" href="https://marinagerman.github.io/marinagerman/sdvg.html">
-  <meta name="robots" content="noindex,follow">
-  <title>Раздел СДВГ — Марина Герман</title>
-  <script>location.replace("sdvg.html");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Симптомы СДВГ для самодиагностики | Марина Герман</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="canonical" href="https://marinagerman.github.io/marinagerman/test-sdvg.html">
+  <meta name="description" content="Чек-лист симптомов СДВГ: 9 пунктов невнимательности и 9 — гиперактивности/импульсивности. Считаете галочки — сколько из 9 в каждой части. От Марины Герман.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Марина Герман">
+  <meta property="og:title" content="Симптомы СДВГ для самодиагностики">
+  <meta property="og:description" content="Две части по 9 симптомов. Отметьте галочки — увидите сколько из 9 в первой и во второй части.">
+  <meta property="og:image" content="https://marinagerman.github.io/marinagerman/og-share-square.jpg">
+  <meta property="og:url" content="https://marinagerman.github.io/marinagerman/test-sdvg.html">
+  <style>
+    :root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+    .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(760px,calc(100% - 2rem));margin:0 auto}
+    .site-topbar{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(197,160,112,.22)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0;min-height:4rem;flex-wrap:wrap}
+    .logo-link{display:inline-flex;align-items:center;gap:.65rem}
+    .logo-img{width:56px;height:56px;object-fit:contain}
+    .logo-word{display:flex;flex-direction:column;line-height:1.15}
+    .logo-word strong{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-bright)}
+    .logo-word span{font-size:.62rem;color:var(--muted)}
+    .nav-pages{display:flex;flex-wrap:nowrap;gap:.28rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .nav-pages::-webkit-scrollbar{display:none}
+    .nav-pages a{flex:0 0 auto;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-bright)}
+    .nav-pages a.active,.nav-pages a:hover{border-color:var(--gold);color:#fff}
+    .top-btn{border-radius:999px;padding:.4rem .85rem;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+
+    .hero{padding:2rem 0 1.4rem;border-bottom:1px solid rgba(197,160,112,.16);background:linear-gradient(180deg,#0c0a08,#050505)}
+    .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    h1{margin-top:.55rem;font-size:clamp(1.55rem,3.8vw,2.2rem);line-height:1.15}
+    .sub{margin-top:.35rem;color:var(--gold-bright);font-size:1rem}
+    .intro{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .intro p+p{margin-top:.7rem}
+    .warn{margin-top:1rem;padding:1rem 1.05rem;border-radius:14px;border:1px solid rgba(197,160,112,.35);background:rgba(197,160,112,.1);color:#e8e0d6;font-size:.92rem}
+    .warn strong{color:var(--gold-bright)}
+    .src{margin-top:.85rem;font-size:.82rem;color:#8a8278}
+    .src a{color:var(--gold-bright);text-decoration:underline}
+
+    .live{position:sticky;top:4.4rem;z-index:40;background:rgba(5,5,5,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(197,160,112,.14);padding:.7rem 0}
+    .live-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+    .live-card{padding:.7rem .85rem;border-radius:12px;border:1px solid rgba(197,160,112,.28);background:rgba(14,12,10,.9)}
+    .live-card span{display:block;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .live-card b{display:block;margin-top:.2rem;font-size:1.25rem;color:var(--gold-bright)}
+
+    .part{padding:1.6rem 0 0}
+    .part h2{font-size:clamp(1.15rem,2.5vw,1.4rem);color:var(--gold-bright);margin-bottom:.35rem}
+    .part .part-lead{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+
+    .item{
+      display:flex;gap:.75rem;align-items:flex-start;cursor:pointer;
+      margin:.55rem 0;padding:.9rem .95rem;border-radius:14px;
+      border:1px solid rgba(197,160,112,.22);background:linear-gradient(180deg,rgba(28,24,20,.45),rgba(10,9,8,.85));
+      transition:border-color .15s, background .15s;
+    }
+    .item:hover{border-color:rgba(197,160,112,.5)}
+    .item.on{border-color:var(--gold);background:rgba(197,160,112,.12)}
+    .item input{margin-top:.2rem;accent-color:var(--gold);width:1.15rem;height:1.15rem;flex:0 0 auto}
+    .item .n{flex:0 0 auto;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--gold);min-width:1.4rem}
+    .item .t{color:#e8e0d6;font-size:.95rem}
+
+    .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.5rem 0 1rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:999px;padding:.75rem 1.25rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
+    .btn-ghost{border:1px solid rgba(197,160,112,.4);color:var(--gold-bright);background:transparent}
+
+    .result{display:none;margin:0 0 2rem;padding:1.3rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.35);background:linear-gradient(160deg,rgba(197,160,112,.14),rgba(12,10,8,.92))}
+    .result.show{display:block}
+    .result h2{font-size:1.2rem;margin-bottom:.85rem}
+    .scores{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .score{padding:1rem;border-radius:14px;border:1px solid rgba(197,160,112,.28);background:rgba(0,0,0,.25);text-align:center}
+    .score b{display:block;font-size:clamp(1.8rem,5vw,2.4rem);color:var(--gold-bright);line-height:1}
+    .score span{display:block;margin-top:.4rem;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .result .desc{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .result .desc strong{color:var(--gold-bright)}
+    .note{margin-top:1rem;font-size:.82rem;color:#8a8278}
+
+    .cta{margin:1.4rem 0 2.2rem;padding:1.35rem 1.15rem;border-radius:18px;border:1px solid rgba(197,160,112,.4);background:linear-gradient(135deg,rgba(197,160,112,.18),rgba(12,10,8,.95))}
+    .cta h2{font-size:1.25rem;margin-bottom:.35rem}
+    .cta p{color:var(--muted);margin-top:.55rem}
+
+    .site-footer{border-top:1px solid rgba(197,160,112,.2);padding:1.5rem 0 2rem}
+    .footer-seller p{margin-top:.3rem;color:var(--muted);font-size:.88rem}
+    .footer-seller a{color:var(--gold-bright);text-decoration:underline}
+    .footer-links{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1rem}
+    .footer-links a{color:var(--muted);font-size:.78rem}
+    .footer-copy{margin-top:1rem;color:#6f675f;font-size:.75rem}
+    .maker-badge{position:fixed;left:max(.7rem,env(safe-area-inset-left));bottom:max(.7rem,env(safe-area-inset-bottom));z-index:80;max-width:min(92vw,280px)}
+    .maker-badge a{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .75rem .55rem .65rem;border-radius:999px;border:1px solid rgba(197,160,112,.45);background:rgba(8,7,6,.92);color:#e0c08a;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    @media(max-width:720px){.logo-word{display:none}.live-grid,.scores{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-  <p>Онлайн-автотест ASRS с сайта снят. Опросник ASRS проводит специалист на приёме.</p>
-  <p><a href="sdvg.html">Перейти в раздел СДВГ</a></p>
+  <div class="site-topbar"><div class="container topbar-inner sans">
+    <a class="logo-link" href="index.html" aria-label="На главную">
+      <img class="logo-img" src="logo-mg.png" width="56" height="56" alt="МГ">
+      <span class="logo-word"><strong>Марина Герман</strong><span>Тебе можно легче</span></span>
+    </a>
+    <nav class="nav-pages sans" aria-label="Разделы">
+      <a href="index.html">Главная</a>
+      <a href="sdvg.html">СДВГ</a>
+      <a href="ya-mogu.html">Я МОГУ!</a>
+      <a href="podarki.html">Подарки</a>
+      <a href="depressiya.html">Депрессия</a>
+      <a href="tetahiling.html">Тетахилинг</a>
+      <a href="kursy.html">Курсы</a>
+      <a href="marina-german.html">Обо мне</a>
+      <a href="otzyvy.html">Отзывы</a>
+      <a href="stati.html">Статьи</a>
+    </nav>
+    <a class="top-btn" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
+  </div></div>
+
+  <header class="hero"><div class="container">
+    <p class="eyebrow sans">СДВГ · чек-лист · самодиагностика</p>
+    <h1 class="sans">Симптомы СДВГ для самодиагностики</h1>
+    <p class="sub">Две части по 9 симптомов — отмечаете галочки</p>
+    <div class="intro">
+      <p>Это ориентир, не медицинский диагноз. Во взрослом возрасте вы могли научиться «вести себя прилично» (например, не перебивать) — но внутри всё равно каждый раз хочется. Тогда галочку ставьте всё равно.</p>
+    </div>
+    <div class="warn sans"><strong>Как считать:</strong> в конце увидите, сколько симптомов из 9 в части «Невнимательность» и сколько из 9 в части «Гиперактивность и импульсивность».</div>
+    <p class="src sans">По чек-листу из канала: <a href="https://t.me/marina_german_potok_fm/7668" target="_blank" rel="noopener">t.me/marina_german_potok_fm/7668</a></p>
+  </div></header>
+
+  <div class="live sans"><div class="container live-grid">
+    <div class="live-card"><span>Часть 1 · невнимательность</span><b id="live1">0 из 9</b></div>
+    <div class="live-card"><span>Часть 2 · гиперактивность</span><b id="live2">0 из 9</b></div>
+  </div></div>
+
+  <main class="container">
+    <section class="part" aria-labelledby="p1">
+      <h2 class="sans" id="p1">Часть 1. Невнимательность</h2>
+      <p class="part-lead">Отметьте то, что узнаёте в себе.</p>
+      <div id="part1" class="sans"></div>
+    </section>
+
+    <section class="part" aria-labelledby="p2">
+      <h2 class="sans" id="p2">Часть 2. Гиперактивность и импульсивность</h2>
+      <p class="part-lead">У взрослых гиперактивность часто уходит во внутреннее беспокойство.</p>
+      <div id="part2" class="sans"></div>
+    </section>
+
+    <div class="actions sans">
+      <button type="button" class="btn btn-gold" id="showResult">Показать результат</button>
+      <button type="button" class="btn btn-ghost" id="resetAll">Сбросить</button>
+      <a class="btn btn-ghost" href="ya-mogu.html">Тренинг «Я МОГУ!»</a>
+    </div>
+
+    <div class="result sans" id="result" aria-live="polite">
+      <h2>Ваш результат</h2>
+      <div class="scores">
+        <div class="score"><b id="out1">0 / 9</b><span>часть 1 · невнимательность</span></div>
+        <div class="score"><b id="out2">0 / 9</b><span>часть 2 · гиперактивность</span></div>
+      </div>
+      <p class="desc" id="outDesc"></p>
+      <p class="note">При СДВГ необязательно все 18 симптомов. Ориентир из поста: если в первой части около 4–5 и больше, а во второй — от 2–5 и больше, вероятность высокая. Окончательное заключение даёт специалист. Это не автотест «диагноз по кнопке» — это честный подсчёт галочек.</p>
+    </div>
+
+    <div class="cta sans">
+      <h2>Хотите навыки, а не только галочки</h2>
+      <p>Тренинг «Я МОГУ!» — 12 недель практики для взрослых с СДВГ. Или напишите Марине в Telegram.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="ya-mogu.html">Я МОГУ!</a>
+        <a class="btn btn-ghost" href="sdvg.html">Раздел СДВГ</a>
+        <a class="btn btn-ghost" href="https://t.me/marina_germann" target="_blank" rel="noopener">Написать</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer sans"><div class="container">
+    <div class="footer-seller">
+      <p><strong>ИП Герман Марина Олеговна</strong></p>
+      <p>Тел.: <a href="tel:+79897001701">+7 989 700 17 01</a></p>
+      <p>Email: <a href="mailto:marinagerman.nails@gmail.com">marinagerman.nails@gmail.com</a></p>
+    </div>
+    <nav class="footer-links" aria-label="Документы">
+      <a href="oferta.html">Оферта</a>
+      <a href="privacy.html">Конфиденциальность</a>
+      <a href="cookies.html">Cookie</a>
+      <a href="requisites.html">Реквизиты</a>
+    </nav>
+    <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Чек-лист — ориентир для самонаблюдения, не замена диагностики.</p>
+  </div></footer>
+
+  <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
+    <a href="tatiana-zhelikhovskaya.html"><span>★</span><span>Сайт сделала Татьяна Желиховская</span><span>→</span></a>
+  </div>
+
+  <script>
+    var part1 = [
+      "Тебе сложно концентрироваться на деталях, делаешь ошибки из-за невнимательности.",
+      "Тебе сложно долго удерживать внимание во время игр, решения задачи, чтения книги — внимание улетает.",
+      "Иногда людям кажется, что ты не слышишь обращённую к тебе речь.",
+      "Ты неспособна до конца следовать инструкциям и завершать работу, бросаешь на середине.",
+      "Тебе сложно начать что-то делать, распределить время, организовать процесс, придерживаться заданного порядка.",
+      "Избегание или неприязнь к делам, требующим долгих умственных усилий (если кажется, что сложно — избегаю).",
+      "Часто теряешь или забываешь нужные вещи (ключи, документы, телефон).",
+      "Ты быстро отвлекаешься на посторонние стимулы или мысли, вылетаешь из процесса.",
+      "Ты забывчива в повседневных делах и рутине."
+    ];
+    var part2 = [
+      "Ты ерзаешь на месте, бывают суетливые движения руками или ногами.",
+      "Тебе часто хочется встать, походить, когда нужно сидеть.",
+      "У детей — бег или лазание в неподходящих ситуациях; у взрослых, которые научились внешне сдерживаться, гиперактивность уходит во внутреннее беспокойство.",
+      "Неспособность тихо проводить досуг у детей; у взрослых чаще — скучно делать рутину: чтобы помыть посуду, надо включить фильм или вебинар; несколько дел одновременно.",
+      "Постоянное нахождение в движении, ощущение работы «будто от моторчика». Сюда же суета, пока не останешься без сил. Сложно расслабиться.",
+      "Избыточная разговорчивость: иногда физически сложно промолчать; если интересно — хочется говорить даже когда собеседнику не очень.",
+      "Привычка отвечать на вопрос до того, как человек договорил. В детстве — выкрикивание ответов с места.",
+      "Трудности с ожиданием своей очереди; вообще тяжело, если надо ждать. Часто слушают информацию на ×2.",
+      "Склонность перебивать, влезать в чужие разговоры или игры: человек только начал — а кажется, что уже понятно, что он скажет."
+    ];
+
+    function render(list, mountId, prefix) {
+      var box = document.getElementById(mountId);
+      box.innerHTML = list.map(function (text, i) {
+        var id = prefix + "-" + (i + 1);
+        return '<label class="item" for="' + id + '">' +
+          '<input type="checkbox" id="' + id + '" data-part="' + prefix + '">' +
+          '<span class="n">' + (i + 1) + '</span>' +
+          '<span class="t">' + text + '</span></label>';
+      }).join("");
+    }
+
+    function count(prefix) {
+      return document.querySelectorAll('input[data-part="' + prefix + '"]:checked').length;
+    }
+
+    function refresh() {
+      var c1 = count("p1");
+      var c2 = count("p2");
+      document.getElementById("live1").textContent = c1 + " из 9";
+      document.getElementById("live2").textContent = c2 + " из 9";
+      document.querySelectorAll(".item").forEach(function (el) {
+        var inp = el.querySelector("input");
+        el.classList.toggle("on", !!(inp && inp.checked));
+      });
+    }
+
+    function showResult() {
+      var c1 = count("p1");
+      var c2 = count("p2");
+      document.getElementById("out1").textContent = c1 + " / 9";
+      document.getElementById("out2").textContent = c2 + " / 9";
+      var desc = "Часть 1 (невнимательность): <strong>" + c1 + " из 9</strong>. Часть 2 (гиперактивность и импульсивность): <strong>" + c2 + " из 9</strong>.";
+      if (c1 >= 4 && c2 >= 2) {
+        desc += " По ориентиру из поста Марины это зона высокой вероятности — имеет смысл спокойно разобраться со специалистом и с опорами, которые реально работают.";
+      } else if (c1 + c2 === 0) {
+        desc += " Пока ни одной галочки. Можно пройти ещё раз внимательнее — с учётом «внутри хочется», даже если снаружи уже научились сдерживаться.";
+      } else {
+        desc += " Набрали меньше порога из поста — это тоже информация. Если жизнь всё равно тяжёлая, можно разобрать опоры в разделе СДВГ или на тренинге «Я МОГУ!».";
+      }
+      document.getElementById("outDesc").innerHTML = desc;
+      document.getElementById("result").classList.add("show");
+      document.getElementById("result").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    render(part1, "part1", "p1");
+    render(part2, "part2", "p2");
+    document.addEventListener("change", function (e) {
+      if (e.target && e.target.matches('input[type="checkbox"][data-part]')) refresh();
+    });
+    document.getElementById("showResult").addEventListener("click", showResult);
+    document.getElementById("resetAll").addEventListener("click", function () {
+      document.querySelectorAll('input[type="checkbox"][data-part]').forEach(function (el) { el.checked = false; });
+      document.getElementById("result").classList.remove("show");
+      refresh();
+    });
+    refresh();
+  </script>
+  <script src="js/analytics.js" defer></script>
 </body>
 </html>

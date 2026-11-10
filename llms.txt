@@ -24,6 +24,7 @@
 - Обо мне (эталон био): https://marinagerman.github.io/marinagerman/marina-german.html
 - СДВГ: https://marinagerman.github.io/marinagerman/sdvg.html
 - Тренинг «Я МОГУ!»: https://marinagerman.github.io/marinagerman/ya-mogu.html
+- Симптомы СДВГ (чек-лист 9+9): https://marinagerman.github.io/marinagerman/test-sdvg.html
 - Тест на депрессию (Бернс): https://marinagerman.github.io/marinagerman/test-depressiya.html
 - Тетахилинг: https://marinagerman.github.io/marinagerman/tetahiling.html
 - Депрессия / выгорание: https://marinagerman.github.io/marinagerman/depressiya.html
