@@ -409,7 +409,7 @@
     <div class="container">
       <p class="brand sans">Из Telegram · @german_tziv</p>
       <h1 class="sans">Отзывы</h1>
-      <p class="lead sans">Живые слова после сканирований, сессий и обучений. Листайте скриншоты и карточки — полная лента в канале отзывов.</p>
+      <p class="lead sans">Живые слова после сканирований, сессий и обучений. Полная лента — в канале отзывов.</p>
       <div class="cta-row sans">
         <a class="btn btn-primary" href="index.html">ДЛЯ СВОИХ</a>
         <a class="btn btn-ghost" href="https://t.me/german_tziv" target="_blank" rel="noopener">Открыть @german_tziv</a>
@@ -420,39 +420,8 @@
 
   <main class="container">
     <section class="section">
-      <h2 class="sans">Скриншоты и отзывы · листайте →</h2>
-      <div class="carousel-wrap">
-        <div class="carousel" id="reviewsCarousel" tabindex="0" aria-label="Карусель отзывов">
-        <figure class="slide"><img src="review-panel-1.png" alt="Отзыв 1" loading="lazy"></figure>
-        <figure class="slide"><img src="panel-reviews-2.jpg" alt="Отзыв 2" loading="lazy"></figure>
-        <figure class="slide"><img src="panel-reviews-channel.jpg" alt="Отзыв 3" loading="lazy"></figure>
-        <figure class="slide"><img src="c01-maria.jpg" alt="Отзыв 4" loading="lazy"></figure>
-        <figure class="slide"><img src="c02-collage.jpg" alt="Отзыв 5" loading="lazy"></figure>
-        <figure class="slide"><img src="c03-piece.jpg" alt="Отзыв 6" loading="lazy"></figure>
-        <figure class="slide"><img src="c04-piece.jpg" alt="Отзыв 7" loading="lazy"></figure>
-        <figure class="slide"><img src="c05-piece.jpg" alt="Отзыв 8" loading="lazy"></figure>
-        <figure class="slide"><img src="c06-panel.jpg" alt="Отзыв 9" loading="lazy"></figure>
-        <figure class="slide"><img src="c07-panel.jpg" alt="Отзыв 10" loading="lazy"></figure>
-        <figure class="slide"><img src="c08-card-maria.jpg" alt="Отзыв 11" loading="lazy"></figure>
-        <figure class="slide"><img src="c09-card-ekaterina.jpg" alt="Отзыв 12" loading="lazy"></figure>
-        <figure class="slide"><img src="c10-card-svetlana.jpg" alt="Отзыв 13" loading="lazy"></figure>
-        <figure class="slide"><img src="c11-card-base.jpg" alt="Отзыв 14" loading="lazy"></figure>
-        <figure class="slide"><img src="c12-card-info.jpg" alt="Отзыв 15" loading="lazy"></figure>
-        <figure class="slide"><img src="c13-card-day1.jpg" alt="Отзыв 16" loading="lazy"></figure>
-        <div class="carousel-nav sans">
-          <span class="hint" id="carouselHint">1 / 16 · можно листать пальцем или стрелками</span>
-          <div class="carousel-btns">
-            <button class="cbtn" type="button" id="prevBtn" aria-label="Назад">‹</button>
-            <button class="cbtn" type="button" id="nextBtn" aria-label="Вперёд">›</button>
-          </div>
-        </div>
-        <div class="dots" id="carouselDots" aria-hidden="true"></div>
-      </div>
-      <p class="lead sans" style="margin-top:1rem;font-size:.9rem">Источник: <a href="https://t.me/german_tziv" style="color:var(--gold-bright);text-decoration:underline" target="_blank" rel="noopener">t.me/german_tziv</a></p>
-    </section>
-
-    <section class="section">
       <h2 class="sans">Что пишут после встреч</h2>
+      <p class="lead sans" style="margin-bottom:1rem;font-size:.9rem">Источник: <a href="https://t.me/german_tziv" style="color:var(--gold-bright);text-decoration:underline" target="_blank" rel="noopener">t.me/german_tziv</a></p>
       <div class="quotes sans">
         <article class="quote">
           <p>«Марина, благодарю от души за сканирование и потом сразу сессию, для меня они прошли неразрывно одним потоком! Было всё прямо в точку… Я искала именно такого проводника, сбалансированного, укреплённого на земле. Я очень рада нашей встрече.»</p>
@@ -493,47 +462,6 @@
     <p class="footer-copy">Copyright © 2026 ИП Герман Марина Олеговна. Все права защищены.</p>
   </div>
 </footer>
-  <script>
-    (function(){
-      const track = document.getElementById('reviewsCarousel');
-      const slides = [...track.querySelectorAll('.slide')];
-      const hint = document.getElementById('carouselHint');
-      const dotsWrap = document.getElementById('carouselDots');
-      const step = () => (slides[0] ? slides[0].offsetWidth + 14 : 280);
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'dot' + (i === 0 ? ' active' : '');
-        b.setAttribute('aria-label', 'Отзыв ' + (i + 1));
-        b.addEventListener('click', () => slides[i].scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'}));
-        dotsWrap.appendChild(b);
-      });
-      const dots = [...dotsWrap.querySelectorAll('.dot')];
-      function currentIndex(){
-        const x = track.scrollLeft;
-        let best = 0, bestDist = Infinity;
-        slides.forEach((s, i) => {
-          const d = Math.abs(s.offsetLeft - x);
-          if (d < bestDist) { bestDist = d; best = i; }
-        });
-        return best;
-      }
-      function sync(){
-        const i = currentIndex();
-        hint.textContent = (i + 1) + ' / ' + slides.length + ' · можно листать пальцем или стрелками';
-        dots.forEach((d, n) => d.classList.toggle('active', n === i));
-      }
-      track.addEventListener('scroll', () => requestAnimationFrame(sync), {passive:true});
-      document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({left: -step(), behavior:'smooth'}));
-      document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({left: step(), behavior:'smooth'}));
-      track.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({left: step(), behavior:'smooth'}); }
-        if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({left: -step(), behavior:'smooth'}); }
-      });
-      sync();
-    })();
-  </script>
-
   <div class="maker-badge" aria-label="Сайт сделала Татьяна Желиховская">
     <a href="tatiana-zhelikhovskaya.html">
       <span class="star" aria-hidden="true">★</span>
