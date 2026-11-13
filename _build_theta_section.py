@@ -5,9 +5,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 
 CSS = r"""
-:root{--bg:#050505;--ink:#fff;--muted:#b8b0a6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
+:root{--bg:#050505;--ink:#fff;--muted:#d8d0c6;--line:rgba(197,160,112,.28);--gold:#c5a070;--gold-bright:#e0c08a;--gold-dim:#9a7a4f}
 *{box-sizing:border-box;margin:0;padding:0}
-body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
 .sans{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:inherit;text-decoration:none}
 .container{width:min(900px,calc(100% - 2rem));margin:0 auto}
@@ -28,7 +28,7 @@ a{color:inherit;text-decoration:none}
 .hero{padding:2rem 0 1.4rem;border-bottom:1px solid rgba(197,160,112,.16);background:linear-gradient(180deg,#0c0a08,#050505)}
 .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 h1{margin-top:.5rem;font-size:clamp(1.5rem,3.6vw,2.25rem);line-height:1.18}
-.lead{margin-top:.8rem;color:var(--muted);font-size:1.02rem;max-width:42rem}
+.lead{margin-top:.8rem;color:#e4ddd4;font-size:1.02rem;max-width:42rem}
 .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dim));color:#111}
@@ -37,8 +37,8 @@ section{padding:1.7rem 0}
 section+section{border-top:1px solid rgba(197,160,112,.12)}
 h2{font-size:clamp(1.1rem,2.3vw,1.45rem);margin-bottom:.65rem;color:var(--gold-bright)}
 h3{color:#fff;font-size:1.05rem;margin:.9rem 0 .35rem}
-p{margin-top:.65rem;color:var(--muted)}
-ul,ol{margin:.7rem 0 0 1.15rem;color:var(--muted)}
+p{margin-top:.65rem;color:#e4ddd4}
+ul,ol{margin:.7rem 0 0 1.15rem;color:#e4ddd4}
 li{margin:.35rem 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.85rem;margin-top:1rem}
 .card{border:1px solid rgba(197,160,112,.25);border-radius:16px;padding:1.15rem;background:linear-gradient(180deg,rgba(28,24,20,.5),rgba(10,9,8,.92));display:flex;flex-direction:column}
@@ -197,7 +197,7 @@ hub = page(
 <main><section><div class="container">
   <div class="grid sans">
     <a class="card" href="tetahiling-metodika.html"><div class="tag">Статьи</div><h3>Про методику</h3><p>Что такое Тетахилинг, базовый, продвинутый и глубинные раскопки.</p></a>
-    <a class="card" href="tetahiling-obuchenie.html"><div class="tag">Семинары 2026</div><h3>Обучение</h3><p>Расписание и оплата — как на Taplink.</p></a>
+    <a class="card" href="tetahiling-obuchenie.html"><div class="tag">Семинары 2026</div><h3>Обучение</h3><p>Расписание семинаров и оплата онлайн.</p></a>
     <a class="card" href="tetahiling-sessiya.html"><div class="tag">1:1</div><h3>Тета-сессия</h3><p>Личная работа с запросом.</p></a>
     <a class="card" href="tetahiling-meditatsii.html"><div class="tag">Практика</div><h3>Тета-медитации</h3><p>Бесплатные медитации Тетахилинг.</p></a>
     <a class="card" href="tetahiling-faq.html"><div class="tag">Вопросы</div><h3>FAQ</h3><p>Образование, запись, сертификат, цена, рассрочка.</p></a>
@@ -237,14 +237,14 @@ metodika = page(
 
 obuchenie = page(
     "Обучение Тетахилинг онлайн 2026 — расписание и оплата | Марина Олеговна Герман",
-    "Расписание семинаров ThetaHealing онлайн 2026: базовый, продвинутый, раскопки, Игра жизни, Ты и Творец. Оплата как на Taplink.",
+    "Расписание семинаров ThetaHealing онлайн 2026: базовый, продвинутый, раскопки, Игра жизни, Ты и Творец. Оплата онлайн.",
     "tetahiling-obuchenie.html",
     f"""
 <header class="hero"><div class="container">
   <p class="crumbs sans"><a href="index.html">Главная</a> · <a href="tetahiling.html">Тетахилинг</a> · Обучение</p>
   <p class="eyebrow sans">Онлайн 2026</p>
   <h1 class="sans">Обучение Тетахилинг</h1>
-  <p class="lead">Инструктор Марина Олеговна Герман · коуч ICF · интегративный психолог. Расписание и оплата — как на Taplink.</p>
+  <p class="lead">Инструктор Марина Олеговна Герман · коуч ICF · интегративный психолог. Расписание семинаров и оплата онлайн.</p>
   <!--SUB-->
 </div></header>
 <main>
@@ -265,8 +265,7 @@ obuchenie = page(
   <p>Оплата через Payform. Есть стипендия и рассрочка — напишите в Telegram.</p>
   <div class="grid sans">{course_cards()}
   </div>
-  <p class="note sans">Также на <a href="https://taplink.cc/pogore__lova/p/a35bf7/" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:underline">Taplink</a>.
-  <a href="https://marinagerman.getcourse.ru/ofertaTETY" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:underline">Оферта на обучение</a>.
+  <p class="note sans"><a href="https://marinagerman.getcourse.ru/ofertaTETY" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:underline">Оферта на обучение</a>.
   Статьи о программах — в <a href="tetahiling-metodika.html" style="color:var(--gold-bright);text-decoration:underline">разделе «Про методику»</a>.</p>
 </div></section>
 </main>
@@ -360,7 +359,7 @@ FAQ_ITEMS = [
     ("А если у меня не получится сканировать?",
      "Методике обучились сотни тысяч людей из 200+ стран. В первый день курса — техника пробуждения интуитивных способностей. Они есть у каждого. Получится — это проще, чем кажется."),
     ("Сколько стоит один семинар?",
-     'Один семинар от 25 000 ₽; при оплате двух и более — ниже. Актуальные цены — на <a href="tetahiling-obuchenie.html" style="color:var(--gold-bright)">странице обучения</a> и <a href="https://taplink.cc/pogore__lova/p/a35bf7/" target="_blank" rel="noopener" style="color:var(--gold-bright)">Taplink</a>.'),
+     'Один семинар от 25 000 ₽; при оплате двух и более — ниже. Актуальные цены — на <a href="tetahiling-obuchenie.html" style="color:var(--gold-bright)">странице обучения</a>.'),
     ("Есть ли рассрочка?",
      "Да, рассрочка от банка без процентов и переплат, с первым платежом через месяц."),
     ("Можно заранее платить маленькими платежами?",
